@@ -1,8 +1,10 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InterceptorsModule } from './interceptors/interceptors.module';
 import { PrimeNgModule } from './primeng/prime-ng.module';
 
 @NgModule({
@@ -12,7 +14,9 @@ import { PrimeNgModule } from './primeng/prime-ng.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimeNgModule
+    PrimeNgModule,
+    HttpClientModule,
+    InterceptorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
