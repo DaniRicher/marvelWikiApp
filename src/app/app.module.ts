@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InterceptorsModule } from './interceptors/interceptors.module';
 import { PrimeNgModule } from './primeng/prime-ng.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PrimeNgModule } from './primeng/prime-ng.module';
     AppRoutingModule,
     PrimeNgModule,
     HttpClientModule,
-    InterceptorsModule
+    InterceptorsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

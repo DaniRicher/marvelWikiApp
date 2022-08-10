@@ -1,0 +1,23 @@
+
+@media screen and (min-width: 961px) {
+    .ocultar {
+        opacity: 0%;
+        pointer-events: none;
+    }
+   
+}
+p-toolbar {
+    position: relative;
+}
+
+@media screen and (max-width: 960px) {
+    .ocultarItems {
+        opacity: 0%;
+        pointer-events: none;
+    } 
+   
+}
+
+.pointer {
+    cursor: pointer;
+}

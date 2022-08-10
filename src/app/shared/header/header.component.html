@@ -1,0 +1,19 @@
+<div class="grid">
+    <p-sidebar [(visible)]="visibleSidebar1">
+        Content
+    </p-sidebar>
+
+    <p-toolbar>
+        <div class="p-toolbar-group-left">
+            <i class="pi pi-bars pointer ocultar" (click)="visibleSidebar1 = true"></i>
+            <p-menubar [model]="items" class="ocultarItems"></p-menubar>
+        </div>
+    </p-toolbar>
+
+    <!-- <p-toolbar>
+
+        <div class="p-toolbar-group-left">
+            <i class="pi pi-bars pointer ocultar" (click)="visibleSidebar1 = true"></i>
+        </div>
+    </p-toolbar> -->
+</div>

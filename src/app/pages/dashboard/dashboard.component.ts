@@ -16,10 +16,10 @@ export class DashboardComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.personajeServices.obtenerPersonajes()
-      .subscribe( info => {
-        console.log(info);
-    })
+    // this.personajeServices.obtenerPersonajes()
+    //   .subscribe( info => {
+    //     console.log(info);
+    // })
   }
 
 }
