@@ -4,7 +4,13 @@
         opacity: 0%;
         pointer-events: none;
     }
+
    
+}
+::ng-deep .bar {
+    padding: 0%;
+    border: 0ch;
+    background-color: rgba(0, 0, 0, 0);
 }
 p-toolbar {
     position: relative;

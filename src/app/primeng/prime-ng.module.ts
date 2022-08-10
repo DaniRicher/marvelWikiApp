@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
+import { MenuModule } from 'primeng/menu';
 
 
 
@@ -18,7 +19,8 @@ import { SidebarModule } from 'primeng/sidebar';
     ButtonModule,
     MenubarModule,
     ToolbarModule,
-    SidebarModule
+    SidebarModule,
+    MenuModule
   ]
 })
 export class PrimeNgModule { }
