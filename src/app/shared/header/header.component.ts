@@ -14,17 +14,26 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
     this.items = [
       {
-        label: 'File',
-        icon: 'pi pi-fw pi-pencil'
-    },
-    {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-    }
+        label: 'Inicio',
+        icon: 'fa-solid fa-home',
+        routerLink: ['dashboard']
+        
+      },
+      {
+        label: 'Personajes',
+        icon: 'fa-solid fa-mask',
+        routerLink: ['personajes']
+        
+      },
+      {
+        label: 'Comics',
+        icon: 'fa-solid fa-newspaper',
+        routerLink: ['comics']
+      }
     ]
-    
   }
 
 }
