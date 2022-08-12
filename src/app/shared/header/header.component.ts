@@ -19,8 +19,7 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Inicio',
         icon: 'fa-solid fa-home',
-        routerLink: ['dashboard']
-        
+        routerLink: ['dashboard'],
       },
       {
         label: 'Personajes',

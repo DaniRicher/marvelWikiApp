@@ -7,6 +7,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -20,7 +21,8 @@ import { MenuModule } from 'primeng/menu';
     MenubarModule,
     ToolbarModule,
     SidebarModule,
-    MenuModule
+    MenuModule,
+    CardModule
   ]
 })
 export class PrimeNgModule { }

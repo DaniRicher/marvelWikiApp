@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { InterceptorsModule } from '../interceptors/interceptors.module';
+import { Respuesta, Personaje } from '../interfaces/personajes.interface';
+import { of, tap } from 'rxjs';
 
 const base_url = environment.base_url;
 
@@ -10,10 +11,31 @@ const base_url = environment.base_url;
 })
 export class PersonajesService {
 
+  public personajes: any = [];
+
   constructor( private https: HttpClient ) { }
 
   obtenerPersonajes() {
-    const url = `${ base_url }/characters`;
-    return this.https.get( url );
+    
+    if( this.personajes.length > 0) {
+
+      //No hay personajes
+      return of( this.personajes );
+
+    } else {
+
+      const url = `${ base_url }/characters`;
+      return this.https.get<Respuesta>( url )
+          .pipe(
+            tap(  personajes => {
+              console.log('Hola');
+              this.personajes = personajes.data.results
+            })
+      );
+      
+    }
   }
+
+
+
 }
