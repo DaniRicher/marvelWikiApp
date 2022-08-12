@@ -17,14 +17,15 @@ export class PersonajesComponent implements OnInit {
   ngOnInit(): void {
 
     this.obtenerPersonajes();
-    this.obtenerImagenes(); 
+    this.obtenerImagenes();
+    
   }
 
   obtenerPersonajes() {
     this.personajesService.obtenerPersonajes()
     .subscribe( ({data}) =>{
       if( !data ) {
-        this.personajes = this.personajesService.personajes
+        this.personajes = this.personajesService.personajes;
       } else {
         this.personajes = data.results;;
       }
@@ -32,15 +33,10 @@ export class PersonajesComponent implements OnInit {
   }
 
   obtenerImagenes() {
-    this.personajesService.obtenerPersonajes()
-        .subscribe( ({data}) => {
-          data.results.forEach((info:any) => {
-            const path = info.thumbnail.path;
-            const extension = info.thumbnail.extension;
-            const img = path+'.'+extension;
-            this.imagenes.push(img);
+    this.personajesService.obtenerImagenes()
+          .subscribe( data => {
+            this.imagenes = data;
           });
-        });
   }
 
 }
