@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ComicsService } from '../../services/comics.service';
+import { Comics } from '../../interfaces/personajes.interface';
+import { Result } from '../../interfaces/comics.interfaces';
 
 @Component({
   selector: 'app-comics',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComicsComponent implements OnInit {
 
-  constructor() { }
+  public comics: Result[] = [];
+  public imagenes: Result[] = [];
+
+  constructor( private comicsService: ComicsService ) { }
 
   ngOnInit(): void {
+    this.obtenerComics();
+    this.obtenerImagenes();
+  }
+
+  obtenerComics() {
+    this.comicsService.obtenerComics()
+    .subscribe( comics => {
+      this.comics = comics;
+    });
+  }
+  obtenerImagenes() {
+    this.comicsService.obtenerImagenes()
+          .subscribe( imagenes => {
+            this.imagenes = imagenes;
+          });
   }
 
 }
