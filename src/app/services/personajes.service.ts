@@ -11,9 +11,8 @@ const base_url = environment.base_url;
 })
 export class PersonajesService {
 
-  public personajes: any = [];
-  public imagenes: any[] = [];
-  public imagen: any = [];
+  private personajes: any = [];
+  private imagenes: any[] = [];
 
   constructor( private https: HttpClient ) { }
 
@@ -29,8 +28,8 @@ export class PersonajesService {
       const url = `${ base_url }/characters`;
       return this.https.get<Respuesta>( url )
           .pipe(
-            tap(  personajes => {
-              this.personajes = personajes.data.results
+            map(  personajes => {
+              return this.personajes = personajes.data.results;
             })
       );
       
@@ -40,7 +39,7 @@ export class PersonajesService {
   obtenerImagenes() {
 
     if( this.imagenes.length > 0 ){
-      
+
       return of( this.imagenes );
       
     } else {
@@ -49,7 +48,6 @@ export class PersonajesService {
           .pipe(
             map( ({data}) => {
               this.imagenes= [];
-              this.imagen= [];
               data.results.forEach( elem => {
                 const path = elem.thumbnail.path;
                 const extension = elem.thumbnail.extension;

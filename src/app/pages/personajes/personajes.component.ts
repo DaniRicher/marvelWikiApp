@@ -18,18 +18,15 @@ export class PersonajesComponent implements OnInit {
 
     this.obtenerPersonajes();
     this.obtenerImagenes();
-    
+
   }
 
   obtenerPersonajes() {
     this.personajesService.obtenerPersonajes()
-    .subscribe( ({data}) =>{
-      if( !data ) {
-        this.personajes = this.personajesService.personajes;
-      } else {
-        this.personajes = data.results;;
-      }
-    });
+        .subscribe(  data => {
+          
+          this.personajes = data;
+        });
   }
 
   obtenerImagenes() {
