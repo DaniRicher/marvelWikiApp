@@ -1,23 +1,31 @@
 <div class="card grid ">
     <div class="col-12">
-        <h2>Personajes</h2>
-        <hr>
 
+        <div class="grid p-fluid justify-content-end align-items-center">
+            <h2 class="col-6">Personajes</h2>
+            <div class="p-inputgroup col-6 sm:col-6" style="height: 50px;">
+                <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                <input type="text" pInputText placeholder="Buscar Personajes">         
+            </div>
+        </div>
+        <hr>
+            <!-- <span class="input-group-text" ><i class="pi pi-search"></i></span>
+            <input type="text" pInputText> -->
         <div class="grid">
             <div *ngFor="let personaje of personajes; let i= index" class="col-12 sm:col-6 md:col-3">
-                <p-card class="m-1" header="{{personaje.name}}" >
+                <p-card class="m-1" header="{{personaje.name}}" styleClass="tam">
                     <ng-template pTemplate="header">
                         <img alt="Card" src="{{ imagenes[i] }}">
                     </ng-template>
 
                     <p>{{personaje.description}}</p>
 
-                    <!-- <ng-template pTemplate="footer" class="grid">
-                        <div class="col-6">
-                            <p-button class="col-12"label="Mas información" icon="pi pi-check"></p-button>
-                            <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+                    <ng-template pTemplate="footer">
+                        <div class="grid">
+                            <p-button class="col-12 m-1" label="Mas información" icon="pi pi-info-circle"></p-button>
+                            <p-button class="col-12" label="Agregar a Favoritos" icon="pi pi-star" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
                         </div>
-                    </ng-template> -->
+                    </ng-template>
                 </p-card>
             </div>
         </div>

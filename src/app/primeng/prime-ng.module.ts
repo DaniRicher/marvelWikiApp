@@ -8,6 +8,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+
 
 
 
@@ -22,7 +24,8 @@ import { CardModule } from 'primeng/card';
     ToolbarModule,
     SidebarModule,
     MenuModule,
-    CardModule
+    CardModule,
+    InputTextModule
   ]
 })
 export class PrimeNgModule { }
