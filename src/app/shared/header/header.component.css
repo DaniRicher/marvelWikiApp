@@ -27,3 +27,8 @@ p-toolbar {
 .pointer {
     cursor: pointer;
 }
+
+.tam {
+    width: 100px;
+    height: 35px;
+}

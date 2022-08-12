@@ -9,6 +9,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 
 
@@ -25,7 +26,8 @@ import { InputTextModule } from 'primeng/inputtext';
     SidebarModule,
     MenuModule,
     CardModule,
-    InputTextModule
+    InputTextModule,
+    ScrollPanelModule
   ]
 })
 export class PrimeNgModule { }

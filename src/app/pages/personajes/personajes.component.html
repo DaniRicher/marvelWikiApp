@@ -1,29 +1,39 @@
-<div class="card grid ">
+<div class="card grid">
     <div class="col-12">
 
-        <div class="grid p-fluid justify-content-end align-items-center">
-            <h2 class="col-6">Personajes</h2>
-            <div class="p-inputgroup col-6 sm:col-6" style="height: 50px;">
+        <div class="grid p-fluid align-items-center">
+
+            <div class="col-12 sm:col-6 ">
+                <h2 class="" style="margin: 0;">Personajes</h2>
+            </div>
+
+            <div class="p-inputgroup col-12 sm:col-6" style="height: 50px;">
                 <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
                 <input type="text" pInputText placeholder="Buscar Personajes">         
             </div>
         </div>
-        <hr>
-            <!-- <span class="input-group-text" ><i class="pi pi-search"></i></span>
-            <input type="text" pInputText> -->
-        <div class="grid">
-            <div *ngFor="let personaje of personajes; let i= index" class="col-12 sm:col-6 md:col-3">
-                <p-card class="m-1" header="{{personaje.name}}" styleClass="tam">
+        <hr style="margin-top: 0;">
+        <div class="grid card">
+            <div *ngFor="let personaje of personajes; let i= index" 
+                  class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
+                <p-card class="m-1 " header="{{personaje.name}}" styleClass="tam">
+
                     <ng-template pTemplate="header">
-                        <img alt="{{personaje.name}}" src="{{ imagenes[i] }}">
+                        <div class="animacion">
+                            <img alt="{{personaje.name}}" src="{{ imagenes[i] }}">
+                        </div>
                     </ng-template>
 
-                    <p>{{personaje.description}}</p>
-
+                    <ng-template pTemplate="subheader">
+                        <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
+                            {{personaje.description}}
+                        </p-scrollPanel>
+                    </ng-template>
+                    
                     <ng-template pTemplate="footer">
-                        <div class="grid">
-                            <p-button class="col-12 m-1" label="Mas información" icon="pi pi-info-circle"></p-button>
-                            <p-button class="col-12" label="Agregar a Favoritos" icon="pi pi-star" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+                        <div class="grid p-fluid align-content-center">
+                            <p-button class="col-12 sm:col-6 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
+                            <p-button class="col-12 sm:col-6 md:col-12" label="Información" icon="pi pi-info-circle" styleClass="p-button-info"></p-button>
                         </div>
                     </ng-template>
                 </p-card>
