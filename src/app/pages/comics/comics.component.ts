@@ -24,21 +24,14 @@ export class ComicsComponent implements OnInit {
   ngOnInit(): void {
     this.spinner = true;
     this.obtenerComics();
-    this.obtenerImagenes();
   }
 
   obtenerComics() {
     this.comicsService.obtenerComics()
     .subscribe( comics => {
       this.comics = comics;
+      this.spinner = false;
     });
-  }
-  obtenerImagenes() {
-    this.comicsService.obtenerImagenes()
-          .subscribe( imagenes => {
-            this.imagenes = imagenes;
-            this.spinner= false;
-          });
   }
 
   cambiarPagina( e:any ) {

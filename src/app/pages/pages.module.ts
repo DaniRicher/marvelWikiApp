@@ -9,6 +9,7 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { ComicsComponent } from './comics/comics.component';
 import { PrimeNgModule } from '../primeng/prime-ng.module';
 import { FiltroPipe } from '../pipes/filtro.pipe';
+import { FuentePipe } from '../pipes/fuente.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FiltroPipe } from '../pipes/filtro.pipe';
     DashboardComponent,
     PersonajesComponent,
     ComicsComponent,
-    FiltroPipe
+    FiltroPipe,
+    FuentePipe
   ],
   imports: [
     CommonModule,

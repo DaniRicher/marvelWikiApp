@@ -15,11 +15,13 @@ export class PersonajesComponent implements OnInit {
   public desde: number = 0;
   public hasta: number = 10;
   public search: string = '';
+  public spinner: boolean = true;
+
 
   constructor( private personajesService: PersonajesService ) { }
 
   ngOnInit(): void {
-
+    this.spinner = true;
     this.obtenerPersonajes();
     this.obtenerImagenes();
   }
@@ -36,6 +38,7 @@ export class PersonajesComponent implements OnInit {
     this.personajesService.obtenerImagenes()
           .subscribe( data => {
             this.imagenes = data;
+            this.spinner = false;
           });
   }
   cambiarPagina( e:any ) {

@@ -13,9 +13,9 @@ export class FiltroPipe implements PipeTransform {
       return comics.slice( page, page + 10 );
     }
 
-    
-    const filterComics = comics.filter( comic => comic.name.includes( search ) );
-    return filterComics;
+    let expresion = new RegExp(`${ search }.*`, 'i' )
+    let busqueda = comics.filter( elem => expresion.test(elem.name + elem.title) );
+    return busqueda;
   }
 
 }

@@ -14,6 +14,7 @@ export class ComicsService {
 
   private comics: any[] = [];
   private imagenes: any[] = [];
+  private imagenesPorComic: any[] = [];
 
   constructor( private http: HttpClient ) { }
 

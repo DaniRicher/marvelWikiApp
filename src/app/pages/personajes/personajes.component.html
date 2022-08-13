@@ -1,4 +1,12 @@
-<div class="card grid">
+<div class="grid align-items-center justify-content-center m-5" *ngIf="spinner">
+
+    <div class="">
+        <p-progressSpinner></p-progressSpinner>
+        <p class="animate__animated animate__backInUp">Cargando...</p>
+
+    </div>
+</div>
+<div class="card grid" *ngIf="!spinner">
     <div class="col-12">
 
         <div class="grid p-fluid align-items-center">
@@ -24,7 +32,7 @@
 
                     <ng-template pTemplate="header">
                         <div class="animacion">
-                            <img alt="{{personaje.name}}" src="{{ imagenes[i+desde] }}">
+                            <img alt="{{personaje.name}}" src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}">
                         </div>
                     </ng-template>
 
