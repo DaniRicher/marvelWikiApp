@@ -22,6 +22,7 @@ export class ComicsComponent implements OnInit {
   constructor( private comicsService: ComicsService ) { }
 
   ngOnInit(): void {
+    this.spinner = true;
     this.obtenerComics();
     this.obtenerImagenes();
   }

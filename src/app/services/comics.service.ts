@@ -18,13 +18,18 @@ export class ComicsService {
   constructor( private http: HttpClient ) { }
 
   obtenerComics() {
-    const url = `${ base_url }/comics`;
-    return this.http.get<Comics>( url )
-          .pipe(
-            map( data => {
-              return this.comics = data.data.results;
-            })
-          );
+    if( this.comics.length > 0) {
+      return of( this.comics );
+    } else {
+      
+      const url = `${ base_url }/comics`;
+      return this.http.get<Comics>( url )
+            .pipe(
+              map( data => {
+                return this.comics = data.data.results;
+              })
+            );
+    }
   }
 
   obtenerImagenes() {

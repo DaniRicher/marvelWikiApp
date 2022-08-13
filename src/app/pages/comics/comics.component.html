@@ -25,7 +25,7 @@
         </div>
         <hr style="margin-top: 0;">
         <div class="grid card">
-            <div *ngFor="let comic of comics |  slice:desde:hasta ; let i = index" 
+            <div *ngFor="let comic of comics |  slice:desde:hasta; let i = index" 
                   class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
                 <p-card class="m-1 " header="{{comic.title}}" styleClass="tam">
 
@@ -37,7 +37,7 @@
 
                     <ng-template pTemplate="subheader">
                         <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                            <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
+                            <p *ngIf="comic.description.length <= 0">No hay descripción...</p>
                             <p innerHTML="{{comic.description}}"></p>
                         </p-scrollPanel>
                     </ng-template>
