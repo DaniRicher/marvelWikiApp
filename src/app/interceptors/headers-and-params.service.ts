@@ -19,7 +19,7 @@ export class HeadersAndParamsService implements HttpInterceptor {
         .set( 'apikey', 'b5abfa731f60e49555240eaf37f0297e' )
         .set( 'ts', '1' )
         .set( 'hash', 'c37d7ef24de8667beb42f6acd0cf41a4' )
-        .set( 'limit', '20' )
+        .set( 'limit', '100' )
     
     const reqClone = req.clone({
       headers,

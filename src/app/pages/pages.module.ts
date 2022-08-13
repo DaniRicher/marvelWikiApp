@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { ComicsComponent } from './comics/comics.component';
 import { PrimeNgModule } from '../primeng/prime-ng.module';
+import { FiltroPipe } from '../pipes/filtro.pipe';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { PrimeNgModule } from '../primeng/prime-ng.module';
     HomeComponent,
     DashboardComponent,
     PersonajesComponent,
-    ComicsComponent
+    ComicsComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     SharedModule,
     PrimeNgModule
-  ]
+  ],
+  providers: []
 })
 export class PagesModule { }

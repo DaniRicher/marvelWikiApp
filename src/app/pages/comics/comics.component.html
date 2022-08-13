@@ -1,4 +1,12 @@
-<div class="card grid">
+<div class="grid align-items-center justify-content-center m-5" *ngIf="spinner">
+
+    <div class="">
+        <p-progressSpinner></p-progressSpinner>
+        <p class="animate__animated animate__backInUp">Cargando...</p>
+
+    </div>
+</div>
+<div class="card grid" *ngIf="!spinner">
     <div class="col-12">
 
         <div class="grid p-fluid align-items-center">
@@ -9,24 +17,27 @@
 
             <div class="p-inputgroup col-12 sm:col-6" style="height: 50px;">
                 <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
-                <input type="text" pInputText placeholder="Buscar Comics...">         
+                <input type="text" 
+                       pInputText placeholder="Buscar Comics..."
+                       #txtSearch
+                       (keyup)="buscarComics( txtSearch.value )">         
             </div>
         </div>
         <hr style="margin-top: 0;">
         <div class="grid card">
-            <div *ngFor="let comic of comics; let i= index" 
+            <div *ngFor="let comic of comics |  slice:desde:hasta ; let i = index" 
                   class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
                 <p-card class="m-1 " header="{{comic.title}}" styleClass="tam">
 
                     <ng-template pTemplate="header">
                         <div class="animacion">
-                            <img alt="" src="{{ imagenes[i] }}">
+                            <img alt="" src="{{ imagenes[i+this.desde] }}">
                         </div>
                     </ng-template>
 
                     <ng-template pTemplate="subheader">
                         <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                            <!-- <p *ngIf="comic.description.length === 0">No hay descripción...</p> -->
+                            <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
                             <p innerHTML="{{comic.description}}"></p>
                         </p-scrollPanel>
                     </ng-template>
@@ -39,8 +50,9 @@
                     </ng-template>
                 </p-card>
             </div>
-            <p-paginator [rows]="10" [totalRecords]="100"></p-paginator>
         </div>
+        <p-paginator [rows]="pageSize" [totalRecords]="comics.length" (onPageChange)="cambiarPagina( $event )"></p-paginator>
+
         
     </div>
 </div>

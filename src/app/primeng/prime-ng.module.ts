@@ -11,6 +11,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { PaginatorModule } from 'primeng/paginator';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 
@@ -29,7 +30,8 @@ import { PaginatorModule } from 'primeng/paginator';
     CardModule,
     InputTextModule,
     ScrollPanelModule,
-    PaginatorModule
+    PaginatorModule,
+    ProgressSpinnerModule
   ]
 })
 export class PrimeNgModule { }
