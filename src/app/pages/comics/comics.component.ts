@@ -38,7 +38,6 @@ export class ComicsComponent implements OnInit {
     console.log(e);
     this.desde = e.page * e.rows;
     this.hasta = this.desde + e.rows;
-    console.log(this.desde);
   }
 
   buscarComics( search: string ) {
