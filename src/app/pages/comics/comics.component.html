@@ -37,7 +37,7 @@
 
                     <ng-template pTemplate="subheader">
                         <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                            <p *ngIf="comic.description.length <= 0">No hay descripción...</p>
+                            <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
                             <p innerHTML="{{comic.description}}"></p>
                         </p-scrollPanel>
                     </ng-template>

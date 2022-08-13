@@ -11,6 +11,10 @@ export class PersonajesComponent implements OnInit {
 
   public personajes: Personaje[] = [];
   public imagenes: any[] = [];
+  public pageSize:number = 10;
+  public desde: number = 0;
+  public hasta: number = 10;
+  public search: string = '';
 
   constructor( private personajesService: PersonajesService ) { }
 
@@ -18,7 +22,6 @@ export class PersonajesComponent implements OnInit {
 
     this.obtenerPersonajes();
     this.obtenerImagenes();
-
   }
 
   obtenerPersonajes() {
@@ -34,6 +37,13 @@ export class PersonajesComponent implements OnInit {
           .subscribe( data => {
             this.imagenes = data;
           });
+  }
+  cambiarPagina( e:any ) {
+    this.desde = e.page * e.rows;
+  }
+
+  buscar( search:string ) {
+    this.search = search;
   }
 
 }
