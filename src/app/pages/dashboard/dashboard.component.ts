@@ -11,15 +11,11 @@ import { PersonajesService } from '../../services/personajes.service';
 export class DashboardComponent implements OnInit {
   
 
-  constructor( private personajeServices: PersonajesService ) { }
+  constructor( ) { }
 
   
 
   ngOnInit(): void {
-    // this.personajeServices.obtenerPersonajes()
-    //   .subscribe( info => {
-    //     console.log(info);
-    // })
   }
 
 }

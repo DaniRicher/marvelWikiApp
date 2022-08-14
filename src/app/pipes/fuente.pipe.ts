@@ -17,7 +17,6 @@ export class FuentePipe implements PipeTransform {
     if( busqueda.length === 0) {
       noFound= true;
     }
-    console.log(noFound);
     return noFound;
   }
 
