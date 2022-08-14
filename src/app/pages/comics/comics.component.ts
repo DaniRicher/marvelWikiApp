@@ -6,7 +6,7 @@ import { Result } from '../../interfaces/comics.interfaces';
 @Component({
   selector: 'app-comics',
   templateUrl: './comics.component.html',
-  styleUrls: ['./comics.component.css']
+  styleUrls: ['./comics.component.css'],
 })
 export class ComicsComponent implements OnInit {
 
@@ -17,6 +17,8 @@ export class ComicsComponent implements OnInit {
   public hasta: number = 10;
   public search: string = '';
   public spinner: boolean = true;
+  public pag: boolean = true;
+  public noFound: boolean = false;
 
 
   constructor( private comicsService: ComicsService ) { }
@@ -35,7 +37,6 @@ export class ComicsComponent implements OnInit {
   }
 
   cambiarPagina( e:any ) {
-    console.log(e);
     this.desde = e.page * e.rows;
     this.hasta = this.desde + e.rows;
   }
@@ -43,7 +44,12 @@ export class ComicsComponent implements OnInit {
   buscarComics( search: string ) {
 
     this.search = search;
-    
+
+    if( search.length === 0 ) {
+      this.pag = true;
+    } else {
+      this.pag = false;
+    }
   }
 
 }

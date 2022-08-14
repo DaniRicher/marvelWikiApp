@@ -25,6 +25,9 @@
             </div>
         </div>
         <hr style="margin-top: 0;">
+        <div *ngIf="noFound | fuente:search:personajes">
+            <h3 class="animate__animated animate__backInUp">No se encontró...</h3>
+        </div>
         <div class="grid card">
             <div *ngFor="let personaje of personajes | filtro:desde:search ; let i= index" 
                   class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
@@ -52,7 +55,7 @@
                 </p-card>
             </div>
         </div>
-        <p-paginator [rows]="pageSize" [totalRecords]="personajes.length" (onPageChange)="cambiarPagina( $event )"></p-paginator>
+        <p-paginator *ngIf="pag" [rows]="pageSize" [totalRecords]="personajes.length" (onPageChange)="cambiarPagina( $event )"></p-paginator>
         
     </div>
 </div>

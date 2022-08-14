@@ -16,6 +16,8 @@ export class PersonajesComponent implements OnInit {
   public hasta: number = 10;
   public search: string = '';
   public spinner: boolean = true;
+  public pag: boolean = true;
+  public noFound!: boolean;
 
 
   constructor( private personajesService: PersonajesService ) { }
@@ -47,6 +49,12 @@ export class PersonajesComponent implements OnInit {
 
   buscar( search:string ) {
     this.search = search;
+
+    if( search.length === 0 ) {
+      this.pag = true;
+    } else {
+      this.pag = false;
+    } 
   }
 
 }
