@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'fuente'
+  name: 'busqueda'
 })
-export class FuentePipe implements PipeTransform {
+export class BusquedaPipe implements PipeTransform {
 
   transform( noFound:boolean = false, search:string = '', comics:any[] ): boolean {
 
