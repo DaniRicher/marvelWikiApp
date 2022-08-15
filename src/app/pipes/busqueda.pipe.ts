@@ -15,7 +15,7 @@ export class BusquedaPipe implements PipeTransform {
     let busqueda = comics.filter( elem => expresion.test(elem.name + elem.title) );
 
     if( busqueda.length === 0) {
-      noFound= true;
+      noFound = true;
     }
     return noFound;
   }
