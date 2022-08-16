@@ -57,4 +57,8 @@ export class PersonajesComponent implements OnInit {
     } 
   }
 
+  mostrar() {
+    console.log('Hola');
+  }
+
 }
