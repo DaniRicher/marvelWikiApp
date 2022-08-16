@@ -1,0 +1,19 @@
+/* .imagen {
+    
+    width: 500px;
+    height: 200px;
+}
+*/
+img {
+    width: 100%;
+    border-radius: 10px;
+} 
+
+button {
+    position: fixed;
+
+}
+.target {
+    margin: 1px;
+    border-radius: 10px;
+}

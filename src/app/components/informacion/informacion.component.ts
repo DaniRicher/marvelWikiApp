@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonajesService } from '../../services/personajes.service';
 import { ComicsService } from '../../services/comics.service';
+import { Personaje } from '../../interfaces/personajes.interface';
 
 
 
@@ -14,6 +15,8 @@ export class InformacionComponent implements OnInit {
 
   public link: string = this.router.url;
   public id: any;
+
+  public personajes!: any[];
 
   constructor( private activateRoute: ActivatedRoute,
                private personajesService: PersonajesService,
@@ -46,6 +49,7 @@ export class InformacionComponent implements OnInit {
     this.personajesService.obtenerInfoPersonajes( this.id )
         .subscribe( data => {
           console.log(data);
+          this.personajes = data;
         });
   }
 

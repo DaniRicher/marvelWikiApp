@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Respuesta, Personaje } from '../interfaces/personajes.interface';
 import { of, tap, map } from 'rxjs';
@@ -40,7 +40,7 @@ export class PersonajesService {
   obtenerInfoPersonajes( id: number ) {
 
       const url = `${ base_url }/characters/${ id }`;
-      return this.https.get(url)
+      return this.https.get( url )
         .pipe(
           map( (personaje:any) => {
             return this.infoPersonajes = personaje.data.results;
