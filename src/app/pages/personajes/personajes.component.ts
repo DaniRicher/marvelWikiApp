@@ -31,7 +31,6 @@ export class PersonajesComponent implements OnInit {
   obtenerPersonajes() {
     this.personajesService.obtenerPersonajes()
         .subscribe(  data => {
-          
           this.personajes = data;
         });
   }
@@ -55,10 +54,6 @@ export class PersonajesComponent implements OnInit {
     } else {
       this.pag = false;
     } 
-  }
-
-  mostrar() {
-    console.log('Hola');
   }
 
 }

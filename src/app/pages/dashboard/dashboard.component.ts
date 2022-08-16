@@ -10,8 +10,25 @@ import { PersonajesService } from '../../services/personajes.service';
 })
 export class DashboardComponent implements OnInit {
 
-  
-  public data: any;
+  public spinner: boolean = true;
+  public personajes: any[] = [];
+  public responsiveOptions = [
+    {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 3
+    },
+    {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 2
+    },
+    {
+        breakpoint: '560px',
+        numVisible: 2,
+        numScroll: 2
+    }
+];
 
   constructor( private personajesService: PersonajesService ) { }
 
@@ -20,9 +37,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.personajesService.obtenerPersonajes()
         .subscribe( data => {
-          console.log(data);
-          data = data;
-        })
+          this.personajes = data;
+          this.spinner = false;
+        });
   }
 
 }

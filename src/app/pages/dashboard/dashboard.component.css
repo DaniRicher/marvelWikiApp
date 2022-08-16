@@ -4,18 +4,18 @@
     text-overflow: ellipsis;
 }
 
-::ng-deep .p-card {
-    
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    height: 80%;
-    width: 80%;
-    padding: 10%;
-
-}
-
 .tam {
     height: 100px;
     overflow: hidden; 
     text-overflow: ellipsis;
+}
+.personajes-item-content {
+    border-radius: 8px;
+    margin: .3rem;
+}
+
+.personajes-image {
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
