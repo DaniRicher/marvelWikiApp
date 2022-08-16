@@ -12,6 +12,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CarouselModule } from 'primeng/carousel';
+
 
 
 
@@ -31,7 +33,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     InputTextModule,
     ScrollPanelModule,
     PaginatorModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    CarouselModule
   ]
 })
 export class PrimeNgModule { }

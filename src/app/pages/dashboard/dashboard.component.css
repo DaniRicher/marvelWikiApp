@@ -1,0 +1,21 @@
+.card {
+    margin: 10px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+::ng-deep .p-card {
+    
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
+
+}
+
+.tam {
+    height: 100px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}

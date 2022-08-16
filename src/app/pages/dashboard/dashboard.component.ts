@@ -9,13 +9,20 @@ import { PersonajesService } from '../../services/personajes.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
 
-  constructor( ) { }
+  
+  public data: any;
+
+  constructor( private personajesService: PersonajesService ) { }
 
   
 
   ngOnInit(): void {
+    this.personajesService.obtenerPersonajes()
+        .subscribe( data => {
+          console.log(data);
+          data = data;
+        })
   }
 
 }
