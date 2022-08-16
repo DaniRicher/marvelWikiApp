@@ -11,10 +11,14 @@
                                 </div>
                                 <div class="col-9">
                                         <div class="grid">
-                                                <div class="col-12" style="padding: 0;">
+                                                <div class="col-6" style="padding: 0;">
                                                         <h4>Descripción</h4>
                                                         <p>{{personaje.description}}</p>
                                                         <p *ngIf="personaje.description.length === 0">No hay descripción...</p>
+                                                </div>
+                                                <div class="col-6" style="padding: 0;">
+                                                        <h4>Última Modificación</h4>
+                                                        <p>{{personaje.modified | date }}</p>
                                                 </div>
                                                 <div class="col-4 target">
                                                         <h4>Historias: {{personaje.stories.returned}}/{{personaje.stories.available}}</h4>
