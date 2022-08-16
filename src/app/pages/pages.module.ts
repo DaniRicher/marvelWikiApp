@@ -29,6 +29,9 @@ import { ComponentsModule } from '../components/components.module';
     PrimeNgModule,
     ComponentsModule
   ],
-  providers: []
+  providers: [],
+  exports: [
+    PersonajesComponent
+  ]
 })
 export class PagesModule { }

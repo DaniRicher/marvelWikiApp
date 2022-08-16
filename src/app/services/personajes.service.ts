@@ -36,6 +36,11 @@ export class PersonajesService {
     }
   }
 
+  obtenerInfoPersonajes( id: number ) {
+    const url = `${ base_url }/characters/${ id }`;
+    return this.https.get(url);
+  }
+
   obtenerImagenes() {
 
     if( this.imagenes.length > 0 ){

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PersonajesService } from '../../services/personajes.service';
 
 @Component({
   selector: 'app-informacion',
@@ -8,13 +9,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class InformacionComponent implements OnInit {
 
-  constructor( private activateRoute: ActivatedRoute ) { }
+  public id: any;
+
+  constructor( private activateRoute: ActivatedRoute,
+               private personajesService: PersonajesService,
+               private router: Router ) { }
 
   ngOnInit(): void {
+
+    const link = this.router.url;
     this.activateRoute.params
-        .subscribe( ({id}:any) => {
-          console.log(id);
-        });
+            .subscribe( ({id}) => {
+              this.id = id;
+            });
   }
 
 }

@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent implements OnInit {
-  public id!: number;
 
   public personajes: Personaje[] = [];
   public imagenes: any[] = [];
@@ -59,7 +58,7 @@ export class PersonajesComponent implements OnInit {
     } 
   }
   mostrarInfo( id: number) {
-    console.log(id);
+
     this.router.navigate([`/dashboard/personajes/${ id }`]);
   }
 

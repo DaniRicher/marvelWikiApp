@@ -32,6 +32,10 @@ export class ComicsService {
             );
     }
   }
+  obtenerInfoComics( id: number ) {
+    const url = `${ base_url }/comics/${ id }`;
+    return this.http.get( url );
+  }
 
   obtenerImagenes() {
 

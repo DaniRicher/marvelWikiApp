@@ -7,7 +7,7 @@ import { PrimeNgModule } from '../primeng/prime-ng.module';
 
 @NgModule({
   declarations: [
-    InformacionComponent
+    InformacionComponent,
   ],
   imports: [
     CommonModule,
