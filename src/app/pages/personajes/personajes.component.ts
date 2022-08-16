@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonajesService } from '../../services/personajes.service';
 import { Personaje } from '../../interfaces/personajes.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personajes',
@@ -8,6 +9,7 @@ import { Personaje } from '../../interfaces/personajes.interface';
   styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent implements OnInit {
+  public id!: number;
 
   public personajes: Personaje[] = [];
   public imagenes: any[] = [];
@@ -20,7 +22,8 @@ export class PersonajesComponent implements OnInit {
   public noFound!: boolean;
 
 
-  constructor( private personajesService: PersonajesService ) { }
+  constructor( private personajesService: PersonajesService,
+               private router: Router ) { }
 
   ngOnInit(): void {
     this.spinner = true;
@@ -54,6 +57,10 @@ export class PersonajesComponent implements OnInit {
     } else {
       this.pag = false;
     } 
+  }
+  mostrarInfo( id: number) {
+    console.log(id);
+    this.router.navigate([`/dashboard/personajes/${ id }`]);
   }
 
 }

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { ComicsComponent } from './comics/comics.component';
+import { InformacionComponent } from '../components/informacion/informacion.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'personajes', component: PersonajesComponent },
+      { path: 'personajes/:id', component: InformacionComponent },
       { path: 'comics', component: ComicsComponent },
+      { path: 'comics/:id', component: InformacionComponent },
       { path: '**', redirectTo: '/dashboard' },
     ]
   },

@@ -10,6 +10,7 @@ import { ComicsComponent } from './comics/comics.component';
 import { PrimeNgModule } from '../primeng/prime-ng.module';
 import { FiltroPipe } from '../pipes/filtro.pipe';
 import { BusquedaPipe } from '../pipes/busqueda.pipe';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BusquedaPipe } from '../pipes/busqueda.pipe';
     CommonModule,
     PagesRoutingModule,
     SharedModule,
-    PrimeNgModule
+    PrimeNgModule,
+    ComponentsModule
   ],
   providers: []
 })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComicsService } from '../../services/comics.service';
 import { Comics } from '../../interfaces/personajes.interface';
 import { Result } from '../../interfaces/comics.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comics',
@@ -21,7 +22,8 @@ export class ComicsComponent implements OnInit {
   public noFound: boolean = false;
 
 
-  constructor( private comicsService: ComicsService ) { }
+  constructor( private comicsService: ComicsService,
+               private router: Router ) { }
 
   ngOnInit(): void {
     this.spinner = true;
@@ -50,6 +52,11 @@ export class ComicsComponent implements OnInit {
     } else {
       this.pag = false;
     }
+  }
+
+  mostrarInfo( id: number) {
+    console.log(id);
+    this.router.navigate([`/dashboard/comics/${ id }`]);
   }
 
 }

@@ -14,6 +14,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CarouselModule } from 'primeng/carousel';
 import { ImageModule } from 'primeng/image';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -36,7 +37,8 @@ import { ImageModule } from 'primeng/image';
     PaginatorModule,
     ProgressSpinnerModule,
     CarouselModule,
-    ImageModule
+    ImageModule,
+    DialogModule
   ]
 })
 export class PrimeNgModule { }
