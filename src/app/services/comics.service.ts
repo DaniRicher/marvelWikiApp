@@ -13,8 +13,10 @@ const base_url = environment.base_url;
 export class ComicsService {
 
   private comics: any[] = [];
+  private infoComics:any = [];
   private imagenes: any[] = [];
-  private imagenesPorComic: any[] = [];
+
+
 
   constructor( private http: HttpClient ) { }
 
@@ -33,8 +35,14 @@ export class ComicsService {
     }
   }
   obtenerInfoComics( id: number ) {
+
     const url = `${ base_url }/comics/${ id }`;
-    return this.http.get( url );
+    return this.http.get( url )
+    .pipe(
+      map( (comics:any) => {
+        return this.infoComics = comics.data.results;
+      }),
+    );
   }
 
   obtenerImagenes() {

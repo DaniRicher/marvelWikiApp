@@ -55,7 +55,6 @@ export class ComicsComponent implements OnInit {
   }
 
   mostrarInfo( id: number) {
-    console.log(id);
     this.router.navigate([`/dashboard/comics/${ id }`]);
   }
 

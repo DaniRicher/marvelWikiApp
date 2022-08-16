@@ -27,22 +27,14 @@ export class PersonajesComponent implements OnInit {
   ngOnInit(): void {
     this.spinner = true;
     this.obtenerPersonajes();
-    this.obtenerImagenes();
   }
 
   obtenerPersonajes() {
     this.personajesService.obtenerPersonajes()
         .subscribe(  data => {
           this.personajes = data;
+          this.spinner = false;
         });
-  }
-
-  obtenerImagenes() {
-    this.personajesService.obtenerImagenes()
-          .subscribe( data => {
-            this.imagenes = data;
-            this.spinner = false;
-          });
   }
   cambiarPagina( e:any ) {
     this.desde = e.page * e.rows;

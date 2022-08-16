@@ -12,13 +12,14 @@ const base_url = environment.base_url;
 export class PersonajesService {
 
   private personajes: any = [];
+  private infoPersonajes: any = [];
   private imagenes: any[] = [];
 
   constructor( private https: HttpClient ) { }
 
   obtenerPersonajes() {
     
-    if( this.personajes.length > 0) {
+    if( this.personajes.length > 0 ) {
 
       //No hay personajes
       return of( this.personajes );
@@ -37,8 +38,15 @@ export class PersonajesService {
   }
 
   obtenerInfoPersonajes( id: number ) {
-    const url = `${ base_url }/characters/${ id }`;
-    return this.https.get(url);
+
+      const url = `${ base_url }/characters/${ id }`;
+      return this.https.get(url)
+        .pipe(
+          map( (personaje:any) => {
+            return this.infoPersonajes = personaje.data.results;
+          }),
+        );
+
   }
 
   obtenerImagenes() {
