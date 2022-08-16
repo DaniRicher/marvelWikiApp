@@ -33,29 +33,31 @@
         <div class="grid card">
             <div *ngFor="let comic of comics | filtro:desde:search; let i = index" 
             class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
-            <h1 *ngIf="noFound">Hola</h1>
-            <p-card class="m-1 " header="{{comic.title }}"  styleClass="tam"> 
-                
-                <ng-template pTemplate="header">
-                        <div class="animacion" >
-                            <img alt="{{comic.title}}" src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}">
-                        </div>
-                    </ng-template>
+            <div class="text-center">
 
-                    <ng-template pTemplate="subheader">
-                        <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                            <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
-                            <p innerHTML="{{comic.description}}"></p>
-                        </p-scrollPanel>
-                    </ng-template>
+                <p-card class="m-1" header="{{comic.title }}"  styleClass="tam"> 
                     
-                    <ng-template pTemplate="footer">
-                        <div class="grid p-fluid align-content-center">
-                            <p-button class="col-12 sm:col-6 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
-                            <p-button class="col-12 sm:col-6 md:col-12" label="Información" icon="pi pi-info-circle" styleClass="p-button-info"></p-button>
-                        </div>
-                    </ng-template>
-                </p-card>
+                    <ng-template pTemplate="header">
+                            <div class="animacion justify-content-center" >
+                                <img alt="{{comic.title}}" src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}">
+                            </div>
+                        </ng-template>
+    
+                        <ng-template pTemplate="subheader">
+                            <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
+                                <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
+                                <p innerHTML="{{comic.description}}"></p>
+                            </p-scrollPanel>
+                        </ng-template>
+                        
+                        <ng-template pTemplate="footer">
+                            <div class="grid p-fluid align-content-center">
+                                <p-button class="col-12 sm:col-6 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
+                                <p-button class="col-12 sm:col-6 md:col-12" label="Información" icon="pi pi-info-circle" styleClass="p-button-info"></p-button>
+                            </div>
+                        </ng-template>
+                    </p-card>
+            </div>
             </div>
         </div>
         <p-paginator *ngIf="pag" [rows]="pageSize" [totalRecords]="comics.length" (onPageChange)="cambiarPagina( $event )"></p-paginator>

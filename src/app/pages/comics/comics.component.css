@@ -3,6 +3,7 @@
 }
 img{
     border-radius: 5%;
+    width: 50%;
 }
 .animacion:hover{
     border-radius:50%;
@@ -14,23 +15,8 @@ img{
 }
 .animacion {
     overflow:hidden;
+    /* width: 50%; */
 }
 .botones {
     margin: 5px;
-}
-@keyframes p-progress-spinner-color {
-    100%,
-    0% {
-        stroke: #d62d20;
-    }
-    40% {
-        stroke: #0057e7;
-    }
-    66% {
-        stroke: #008744;
-    }
-    80%,
-    90% {
-        stroke: #ffa700;
-    }
 }
