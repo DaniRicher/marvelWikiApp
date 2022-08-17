@@ -2,55 +2,62 @@
         <div class="col-12">
                 <div *ngFor="let personaje of personajes">
 
-                        <h1>{{personaje.name}} </h1>
+                        <h1>{{ personaje.name }} </h1>
 
                         <div class="grid">
-                                <div class="imagen col-3">
+                                <div class="imagen col-12 sm:col-3 md:col-3">
                                         <img src="{{personaje.thumbnail.path+'.'+personaje.thumbnail.extension}}"
                                              alt="">
                                 </div>
                                 <div class="col-9">
                                         <div class="grid">
-                                                <div class="col-6" style="padding: 0;">
+                                                <div class="col-12 sm:col-6 md:col-6 " style="padding: 0; margin-left: 10px;">
                                                         <h4>Descripción</h4>
-                                                        <p>{{personaje.description}}</p>
+                                                        <p>{{ personaje.description }}</p>
                                                         <p *ngIf="personaje.description.length === 0">No hay descripción...</p>
+
                                                 </div>
-                                                <div class="col-6" style="padding: 0;">
+                                                <div class="col-12 sm:col-5 md:col-5" style="padding: 0; margin-left: 10px;">
                                                         <h4>Última Modificación</h4>
-                                                        <p>{{personaje.modified | date }}</p>
+                                                        <p>{{ personaje.modified | date }}</p>
                                                 </div>
-                                                <div class="col-4 target">
-                                                        <h4>Historias: {{personaje.stories.returned}}/{{personaje.stories.available}}</h4>
-                                                        
-                                                        <div *ngFor="let storie of personaje.stories.items" class="">
-                                                                <ul>
-                                                                        <li>
-                                                                                {{storie.name}}
-                                                                        </li>
-                                                                </ul>
-                                                        </div>
+                                                <div class="col-12 target sm:col-4 md:col-4">
+                                                        <p-card>
+                                                                <h4>Historias: {{personaje.stories.returned}}/{{personaje.stories.available}}</h4>
+                                                                
+                                                                <div *ngFor="let storie of personaje.stories.items" class="">
+                                                                        <ul>
+                                                                                <li>
+                                                                                        {{ storie.name }}
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                        </p-card>
                                                 </div>
-                                                <div class="col-4 target" >
-                                                        <h4>Comics: {{personaje.comics.returned}}/{{personaje.comics.available}}</h4>
-                                                        <div *ngFor="let comics of personaje.comics.items" class="">
-                                                                <ul>
-                                                                        <li>
-                                                                                {{comics.name}}
-                                                                        </li>
-                                                                </ul>
-                                                        </div>
+                                                <div class="col-12 target sm:col-4 md:col-4">
+                                                        <p-card>
+                                                                <h4>Comics: {{personaje.comics.returned}}/{{personaje.comics.available}}</h4>
+                                                                <div *ngFor="let comics of personaje.comics.items" class="">
+                                                                        <ul>
+                                                                                <li>
+                                                                                        {{ comics.name }}
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                        </p-card>
                                                 </div>
-                                                <div class="col target">
-                                                        <h4>Series: {{personaje.series.returned}}/{{personaje.comics.available}} </h4>
-                                                        
-                                                        <div *ngFor="let serie of personaje.series.items" class="">
-                                                                <ul>
-                                                                        <li>
-                                                                                {{serie.name}}
-                                                                        </li>
-                                                                </ul>
-                                                        </div>
+                                                <div class="col-12 target sm:col-3 md:col-3">
+                                                        <p-card>
+                                                                <h4>Series: {{personaje.series.returned}}/{{personaje.comics.available}} </h4>
+                                                                
+                                                                <div *ngFor="let serie of personaje.series.items" class="">
+                                                                        <ul>
+                                                                                <li>
+                                                                                        {{ serie.name }}
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                        </p-card>
                                                 </div>
 
                                         </div>

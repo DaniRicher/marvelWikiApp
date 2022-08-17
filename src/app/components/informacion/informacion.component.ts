@@ -13,28 +13,18 @@ import { Personaje } from '../../interfaces/personajes.interface';
 })
 export class InformacionComponent implements OnInit {
 
-  public link: string = this.router.url;
   public id: any;
 
   public personajes!: any[];
+  public comics!: any[];
 
   constructor( private activateRoute: ActivatedRoute,
-               private personajesService: PersonajesService,
-               private comicsService: ComicsService,
-               private router: Router ) { }
+               private personajesService: PersonajesService ) { }
 
   ngOnInit(): void {
 
     this.paramsId();
-
-    if( this.link.includes('personajes') ) {
-
       this.obtenerPersonajes();
-
-    } else if( this.link.includes('comics') ) {
-
-      this.obtenerComics();
-    }
     
   }
 
@@ -48,16 +38,8 @@ export class InformacionComponent implements OnInit {
   obtenerPersonajes() {
     this.personajesService.obtenerInfoPersonajes( this.id )
         .subscribe( data => {
-          console.log(data);
           this.personajes = data;
         });
-  }
-
-  obtenerComics() {
-    this.comicsService.obtenerInfoComics( this.id )
-    .subscribe( data => {
-      console.log(data);
-    });
   }
 
 }
