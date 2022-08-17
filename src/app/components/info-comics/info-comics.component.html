@@ -1,0 +1,62 @@
+<div class="grid">
+    <div class="col-12">
+        <div *ngFor="let comic of comics">
+
+            <h1>{{ comic.title }}</h1>
+
+            <div class="grid">
+                <div class="imagen col-12 sm:col-3 md:col-3">
+                    <img src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}" alt="">
+                </div>
+                <div class="col-9">
+                    <div class="grid">
+                        <div class="col-12 sm:col-8 md:col-8" style="padding: 0; margin-left: 10px;">
+                            <h4>Descripción</h4>
+                            <p>{{ comic.description }}</p>
+                            <p *ngIf="comic.description.length === 0">No hay descripción...</p>
+                        </div>
+                        <div class="col-12 sm:col-3 md:col-3" style="padding: 0; margin-left: 10px;">
+                            <h4>Última Modificación</h4>
+                            <p>{{ comic.modified | date }}</p>
+                        </div>
+                        <div class="col-12 target sm:col-3 md:col-3">
+                            <p-card>
+                                <h4>Series: {{ comic.series.name }}</h4>
+                            </p-card>
+                        </div>
+                        <div class="col-12 target sm:col-5 md:col-5">
+                            <p-card>
+                                <h4>Historias: {{comic.stories.available}}</h4>
+                                <div *ngFor="let storie of comic.stories.items">
+                                    <ul>
+                                        <li>
+                                            {{storie.name}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </p-card>
+                        </div>
+                        <div class="col-12 target sm:col-3 md:col-3">
+                            <p-card>
+                                <h4>Creadores: {{ comic.creators.available }}</h4>
+                                <div *ngFor="let creators of comic.creators.items">
+                                    <ul>
+                                        <li>
+                                            {{ creators.name }}({{creators.role | titlecase }})
+                                        </li>
+                                    </ul>
+                                </div>
+                            </p-card>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<button pButton type="button" routerLink="../" class="p-button-raised p-button-rounded p-button-outlined"
+        icon="pi pi-arrow-circle-left"></button>

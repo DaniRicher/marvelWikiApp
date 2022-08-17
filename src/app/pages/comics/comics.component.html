@@ -8,10 +8,10 @@
 </div>
 
 
-<div class="card grid" *ngIf="!spinner">
+<div class="grid" *ngIf="!spinner">
     <div class="col-12">
         
-        <div class="grid p-fluid align-items-center">
+        <div class="grid">
             
             <div class="col-12 sm:col-6 ">
                 <h2 class="" style="margin: 0;">Comics</h2>
@@ -30,43 +30,47 @@
         <div *ngIf="noFound | busqueda:search:comics">
             <h3 class="animate__animated animate__backInUp">No se encontró...</h3>
         </div>
-        <div class="grid card">
-            <div *ngFor="let comic of comics | filtro:desde:search; let i = index" 
-            class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
-            <div class="text-center">
 
-                <p-card class="m-1" header="{{comic.title }}"  styleClass="tam"> 
+        <div class="grid mb-3">
+            <div *ngFor="let comic of comics | filtro:desde:search; let i = index" 
+                 class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
+                <div class="tarjeta">
+
+                    <p-card class="m-2"  styleClass="tam"> 
                     
                     <ng-template pTemplate="header">
-                            <div class="animacion justify-content-center" >
+                            <div class="animacion">
                                 <img alt="{{comic.title}}" src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}">
+
                             </div>
                         </ng-template>
+                        <h4>{{comic.title}}</h4>
     
-                        <ng-template pTemplate="subheader">
-                            <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                                <!-- <p *ngIf="comic.description.length <= 0">No hay descripción...</p> -->
-                                <p innerHTML="{{comic.description}}"></p>
-                            </p-scrollPanel>
-                        </ng-template>
+                            <ng-template pTemplate="subheader">
+                                <p-scrollPanel [style]="{ height: '50px'}" class="animate__animate animate__pulse">
+                                    <p>{{ comic.description }}</p>
+                                    <p *ngIf="comic.description === null || comic.description.length === 0">No hay descripción...</p>
+                                </p-scrollPanel>
+                            </ng-template>
                         
-                        <ng-template pTemplate="footer">
-                            <div class="grid p-fluid align-content-center">
-                                <p-button class="col-12 sm:col-6 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
-                                <p-button class="col-12 sm:col-6 md:col-12" 
+                            <ng-template pTemplate="footer">
+                                <div class="grid p-fluid align-content-center">
+                                    <p-button class="col-12 sm:col-6 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
+                                    <p-button class="col-12 sm:col-6 md:col-12" 
                                           label="Información" 
                                           icon="pi pi-info-circle" 
                                           styleClass="p-button-info"
                                           (onClick)="mostrarInfo( comic.id )"></p-button>
-                            </div>
-                        </ng-template>
-                    </p-card>
-            </div>
+                                </div>
+                            </ng-template>
+                        </p-card>
+                </div>
             </div>
         </div>
-        <p-paginator *ngIf="pag" [rows]="pageSize" [totalRecords]="comics.length" (onPageChange)="cambiarPagina( $event )"></p-paginator>
-
-        
+        <p-paginator *ngIf="pag" 
+                     [rows]="pageSize" 
+                     [totalRecords]="comics.length" 
+                     (onPageChange)="cambiarPagina( $event )"></p-paginator>
     </div>
 </div>
 

@@ -1,4 +1,3 @@
-
 img {
     width: 100%;
     border-radius: 10px;
@@ -8,6 +7,7 @@ img {
     margin: 1px;
     border-radius: 10px;
 }
+
 button {
 	position: fixed;
 	bottom: 20px;

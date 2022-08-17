@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { ComicsComponent } from './comics/comics.component';
 import { InformacionComponent } from '../components/informacion/informacion.component';
+import { InfoComicsComponent } from '../components/info-comics/info-comics.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
       { path: 'personajes', component: PersonajesComponent },
       { path: 'personajes/:id', component: InformacionComponent },
       { path: 'comics', component: ComicsComponent },
-      { path: 'comics/:id', component: InformacionComponent },
+      { path: 'comics/:id', component: InfoComicsComponent },
       { path: '**', redirectTo: '/dashboard' },
     ]
   },
