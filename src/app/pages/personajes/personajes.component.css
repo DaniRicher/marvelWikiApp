@@ -1,6 +1,13 @@
+.animacion {
+    overflow:hidden;
+    height: 200px;
+    width: 200px;
+}
 
 img {
     border-radius: 5%;
+    max-height: 100%;
+    max-width: 100%;
 }
 ::ng-deep .tam{
     border-radius: 5%;
@@ -10,13 +17,17 @@ img {
     border-radius:50%;
     -webkit-border-radius:50%;
     box-shadow: 0px 0px 15px 15px rgba(0,0,0,0);
-    -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,1);;
-    /* transform: rotate(360deg); */
-    /* -webkit-transform: rotate(360deg); */
-}
-.animacion {
-    overflow:hidden;
+    -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,1);
 }
 .botones {
     margin: 5px;
+}
+
+@media screen and ( max-width: 560px ){
+    
+    .animacion {
+        overflow:hidden;
+        height: 100%;
+        width: 100%;
+    }
 }

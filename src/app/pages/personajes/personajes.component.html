@@ -31,13 +31,14 @@
         </div>
         <div class="grid card">
             <div *ngFor="let personaje of personajes | filtro:desde:search ; let i= index" 
-                  class="col-12 sm:col-6 md:col-3 animate__animated animate__pulse">
+                  class="col-12 sm:col-6 md:col-3 lg:col-2 animate__animated animate__pulse">
 
                 <p-card class="m-1 " header="{{personaje.name}}" styleClass="tam">
 
                     <ng-template pTemplate="header">
                         <div class="animacion">
-                            <img alt="{{personaje.name}}" src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}">
+                            <img alt="{{personaje.name}}" 
+                                 src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}">
                             <!-- <p-image src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}" alt="{{personaje.name}}" [preview]="true" (onShow)="mostrar()"></p-image> -->
                         </div>
                     </ng-template>
