@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicsService } from '../../services/comics.service';
 import { ActivatedRoute } from '@angular/router';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-info-comics',
@@ -37,5 +38,7 @@ export class InfoComicsComponent implements OnInit {
           this.spinner = false;
         });
   }
+
+
 
 }

@@ -22,11 +22,11 @@
                         <div class="col-12 sm:col-8 md:col-8" style="padding: 0; margin-left: 10px;">
                             <h4>Descripción</h4>
                             <p>{{ comic.description }}</p>
-                            <p *ngIf="comic.description.length === 0">No hay descripción...</p>
+                            <p *ngIf="comic.description === null || comic.description.length === 0 ">No hay descripción...</p>
                         </div>
                         <div class="col-12 sm:col-3 md:col-3" style="padding: 0; margin-left: 10px;">
                             <h4>Última Modificación</h4>
-                            <p >{{ comic.modified | date }}</p>
+                            <p *ngIf="comic.modified | date ">{{ comic.modified | date }}</p>
                         </div>
                         <div class="col-12 target sm:col-5 md:col-3">
                             <p-card>
