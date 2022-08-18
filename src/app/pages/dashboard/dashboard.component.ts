@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
 
   public spinner: boolean = true;
   public personajes: any[] = [];
+  public comics: any[] = [];
   public responsiveOptions = [
     {
         breakpoint: '1024px',
@@ -25,21 +26,22 @@ export class DashboardComponent implements OnInit {
     },
     {
         breakpoint: '560px',
-        numVisible: 2,
-        numScroll: 2
+        numVisible: 1,
+        numScroll: 1
     }
 ];
 
-  constructor( private personajesService: PersonajesService ) { }
+  constructor() { }
 
   
 
   ngOnInit(): void {
-    this.personajesService.obtenerPersonajes()
-        .subscribe( data => {
-          this.personajes = data;
-          this.spinner = false;
-        });
+
+    if(localStorage.getItem('personajesFav')! ){
+      this.personajes = JSON.parse(localStorage.getItem('personajesFav')!);
+    }
+    this.spinner = false;
+
   }
 
 }

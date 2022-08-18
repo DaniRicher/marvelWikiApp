@@ -23,7 +23,7 @@
                 [responsiveOptions]="responsiveOptions">
     
         <ng-template pTemplate="header">
-            <h3>Mis Comics Favoritos</h3>
+            <h3>Mis Personajes Favoritos</h3>
             
         </ng-template>
         
@@ -32,12 +32,13 @@
                 <div class="personajes-item-content">
                     <p-card>
                         <ng-template pTemplate="header">
-                            <img src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}" alt="{{personaje.name}}.name" class="personajes-image mt-3">
+                            <img src="{{ personaje.img }}" 
+                                 alt="{{personaje.nombre}} " class="personajes-image mt-3">
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
                             <div>
-                                <h4 class="p-mb-1"> {{personaje.name}} </h4>
+                                <h4 class="p-mb-1"> {{ personaje.nombre }} </h4>
                             </div>
                         </ng-template>
                         
@@ -58,8 +59,8 @@
     <div *ngIf="personajes.length === 0 && !spinner">
         <h4>Aún no tiene personajes favoritos</h4>
     </div>
+    <!-- [value]="comics"  -->
     <p-carousel *ngIf="personajes.length > 0"
-                [value]="personajes" 
                 [numVisible]="3" 
                 [numScroll]="3" 
                 [circular]="true" 
@@ -67,7 +68,7 @@
                 [responsiveOptions]="responsiveOptions">
     
         <ng-template pTemplate="header">
-            <h3>Mis Personajes Favoritos</h3>
+            <h3>Mis Comics Favoritos</h3>
         </ng-template>
         
         <ng-template let-personaje pTemplate="item">

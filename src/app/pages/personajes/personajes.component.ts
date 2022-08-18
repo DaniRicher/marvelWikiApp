@@ -20,6 +20,9 @@ export class PersonajesComponent implements OnInit {
   public pag: boolean = true;
   public noFound!: boolean;
 
+  public personajesFav: any[] = [];
+  public id: any[] = [];
+
 
   constructor( private personajesService: PersonajesService,
                private router: Router ) { }
@@ -50,8 +53,36 @@ export class PersonajesComponent implements OnInit {
     } 
   }
   mostrarInfo( id: number) {
-
     this.router.navigate([`/dashboard/personajes/${ id }`]);
+  }
+
+  guardarLocalStorage( key: string, personaje: any[]) {
+
+
+    localStorage.setItem( key, JSON.stringify( personaje ));
+
+  }
+
+  cargarLocalStorage() {
+
+    this.personajesFav = [];
+    if( localStorage.getItem('personajesFav')! ) {
+      this.personajesFav = JSON.parse(localStorage.getItem('personajesFav')!);
+      this.personajesFav.forEach( ({id}) => {
+        this.id.push(id);
+      });
+    }
+
+  }
+  agregarFavoritos( id: number, nombre: string, img:string ) {
+
+    this.cargarLocalStorage();
+    if( this.id.includes(id) ) {
+      return;
+    }
+    this.personajesFav.push({ id, nombre, img });
+    this.guardarLocalStorage('personajesFav', this.personajesFav );
+
   }
 
 }
