@@ -38,9 +38,10 @@
       
                           <ng-template pTemplate="header">
                               <div class="animacion">
-                                  <img alt="{{personaje.name}}" 
-                                       src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}">
-                                  <!-- <p-image src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}" alt="{{personaje.name}}" [preview]="true" (onShow)="mostrar()"></p-image> -->
+                                  <!-- <img alt="{{personaje.name}}" 
+                                       src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}"> -->
+                                  <p-image src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}" 
+                                           alt="{{personaje.name}}" [preview]="true" imageClass="p-image" styleClass="toolbar"></p-image>
                               </div>
                           </ng-template>
       

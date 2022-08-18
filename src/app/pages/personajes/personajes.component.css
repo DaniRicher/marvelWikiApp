@@ -4,6 +4,19 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
+::ng-deep .p-image {
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+}
+:host ::ng-deep .p-image-action {
+    pointer-events: none;
+}
+:host ::ng-deep .p-image-toolbar {
+    opacity: 0;
+}
+
+
 ::ng-deep .tam{
     border-radius: 5%;
 }

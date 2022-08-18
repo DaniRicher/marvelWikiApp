@@ -27,6 +27,12 @@
     width: 100%;
     height: 100%;
 }
+:host ::ng-deep .p-image-action {
+    pointer-events: none;
+}
+:host ::ng-deep .p-image-toolbar {
+    opacity: 0;
+}
 
 .botones {
     margin: 5px;
