@@ -45,6 +45,7 @@
                         <ng-template pTemplate="footer">
                             <div class="car-buttons p-mt-5">
                                 <button pButton type="button" class="m-1" label="Info"></button>
+                                <button pButton type="button" class="m-1" label="NoFavorito"></button>
                             </div> 
                         </ng-template>
                         
@@ -56,11 +57,11 @@
     </p-carousel>
     
 
-    <div *ngIf="personajes.length === 0 && !spinner">
-        <h4>Aún no tiene personajes favoritos</h4>
+    <div *ngIf="comics.length === 0 && !spinner">
+        <h4>Aún no tiene Comics favoritos</h4>
     </div>
-    <!-- [value]="comics"  -->
     <p-carousel *ngIf="personajes.length > 0"
+                [value]="comics" 
                 [numVisible]="3" 
                 [numScroll]="3" 
                 [circular]="true" 
@@ -71,24 +72,24 @@
             <h3>Mis Comics Favoritos</h3>
         </ng-template>
         
-        <ng-template let-personaje pTemplate="item">
+        <ng-template let-comic pTemplate="item">
             <div class="personajes-item text-center">
                 <div class="personajes-item-content">
                     <p-card>
                         <ng-template pTemplate="header">
-                            <img src="{{ personaje.thumbnail.path+'.'+personaje.thumbnail.extension }}" alt="{{personaje.name}}.name" class="personajes-image mt-3">
+                            <img src="{{ comic.img }}" alt="{{comic.nombre}}.name" class="personajes-image mt-3">
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
                             <div>
-                                <h4 class="p-mb-1"> {{personaje.name}} </h4>
+                                <h4 class="p-mb-1"> {{comic.nombre}} </h4>
                             </div>
                         </ng-template>
                         
                         <ng-template pTemplate="footer">
                             <div class="car-buttons p-mt-5">
                                 <button pButton type="button" class="m-1" label="Info"></button>
-                                <button pButton type="button" class="m-1" label="Info"></button>
+                                <button pButton type="button" class="m-1" label="NoFavorito"></button>
                             </div> 
                         </ng-template>
                         

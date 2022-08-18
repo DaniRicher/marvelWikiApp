@@ -21,6 +21,9 @@ export class ComicsComponent implements OnInit {
   public pag: boolean = true;
   public noFound: boolean = false;
 
+  public comicsFav:any[] = [];
+  public id:any[] = [];
+
 
   constructor( private comicsService: ComicsService,
                private router: Router ) { }
@@ -56,6 +59,35 @@ export class ComicsComponent implements OnInit {
 
   mostrarInfo( id: number) {
     this.router.navigate([`/dashboard/comics/${ id }`]);
+  }
+
+  guardarLocalStorage( key: string, comic: any[]) {
+
+    localStorage.setItem( key, JSON.stringify( comic ));
+
+  }
+
+  cargarLocalStorage() {
+
+    this.comicsFav = [];
+    if( localStorage.getItem('comicsFav')! ) {
+      this.comicsFav = JSON.parse(localStorage.getItem('comicsFav')!);
+      this.comicsFav.forEach( ({id}) => {
+        this.id.push(id);
+      });
+    }
+
+  }
+
+  agregarFavoritos( id: number, nombre: string, img:string ) {
+
+    this.cargarLocalStorage();
+    if( this.id.includes(id) ) {
+      return;
+    }
+    this.comicsFav.push({ id, nombre, img });
+    this.guardarLocalStorage('comicsFav', this.comicsFav );
+
   }
 
 }

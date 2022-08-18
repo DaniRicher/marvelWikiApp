@@ -59,7 +59,11 @@
                         
                             <ng-template pTemplate="footer">
                                 <div class="grid p-fluid align-content-center ">
-                                    <p-button class="col-12 sm:col-12 md:col-12 p-button-success" label="Favoritos" icon="pi pi-star" styleClass="p-button-success"></p-button>
+                                    <p-button class="col-12 sm:col-12 md:col-12 p-button-success" 
+                                              label="Favoritos" 
+                                              icon="pi pi-star" 
+                                              styleClass="p-button-success"
+                                              (click)="agregarFavoritos(comic.id, comic.title, comic.thumbnail.path+'.'+comic.thumbnail.extension )"></p-button>
                                     <p-button class="col-12 sm:col-12 md:col-12" 
                                           label="Información" 
                                           icon="pi pi-info-circle" 

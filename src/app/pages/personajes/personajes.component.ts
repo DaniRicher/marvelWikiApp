@@ -58,7 +58,6 @@ export class PersonajesComponent implements OnInit {
 
   guardarLocalStorage( key: string, personaje: any[]) {
 
-
     localStorage.setItem( key, JSON.stringify( personaje ));
 
   }
@@ -74,6 +73,7 @@ export class PersonajesComponent implements OnInit {
     }
 
   }
+
   agregarFavoritos( id: number, nombre: string, img:string ) {
 
     this.cargarLocalStorage();
