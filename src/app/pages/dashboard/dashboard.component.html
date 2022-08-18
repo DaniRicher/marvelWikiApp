@@ -60,7 +60,7 @@
     <div *ngIf="comics.length === 0 && !spinner">
         <h4>Aún no tiene Comics favoritos</h4>
     </div>
-    <p-carousel *ngIf="personajes.length > 0"
+    <p-carousel *ngIf="comics.length > 0"
                 [value]="comics" 
                 [numVisible]="3" 
                 [numScroll]="3" 
