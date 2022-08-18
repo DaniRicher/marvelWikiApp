@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicsService } from '../../services/comics.service';
-import { Comics } from '../../interfaces/personajes.interface';
 import { Result } from '../../interfaces/comics.interfaces';
 import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-comics',
@@ -83,10 +85,26 @@ export class ComicsComponent implements OnInit {
 
     this.cargarLocalStorage();
     if( this.id.includes(id) ) {
+      Swal.fire('Oops!!', 'El comic ya está agregado como favorito' , 'error');
       return;
+    } else {
+      Swal.fire({
+        title: '¿Estás seguro?',
+        text: `Guardar a ${ nombre }`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'Cancelar'
+      }).then( result => {
+        if( result.isConfirmed ) {
+          Swal.fire('Comic agregado con exito!!', '', 'success');
+          this.comicsFav.push({ id, nombre, img });
+          this.guardarLocalStorage('comicsFav', this.comicsFav );
+        }
+      });
     }
-    this.comicsFav.push({ id, nombre, img });
-    this.guardarLocalStorage('comicsFav', this.comicsFav );
 
   }
 

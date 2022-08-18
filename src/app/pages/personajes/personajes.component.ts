@@ -3,6 +3,8 @@ import { PersonajesService } from '../../services/personajes.service';
 import { Personaje } from '../../interfaces/personajes.interface';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
@@ -78,10 +80,27 @@ export class PersonajesComponent implements OnInit {
 
     this.cargarLocalStorage();
     if( this.id.includes(id) ) {
+      Swal.fire('Oops!!', 'El personaje ya está agregado como favorito' , 'error');
       return;
+    } else {
+      
+      Swal.fire({
+        title: '¿Estás seguro?',
+        text: `Guardar a ${ nombre }`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Personaje agregado con exito!!', '', 'success');
+          this.personajesFav.push({ id, nombre, img });
+          this.guardarLocalStorage('personajesFav', this.personajesFav );
+        }
+      });
     }
-    this.personajesFav.push({ id, nombre, img });
-    this.guardarLocalStorage('personajesFav', this.personajesFav );
 
   }
 
