@@ -12,3 +12,10 @@ button {
 	position: fixed;
 	bottom: 20px;
 }
+.contenedor {
+    width: auto;
+    height: auto;
+}
+::ng-deep .p-card {
+    width: 100%;
+}

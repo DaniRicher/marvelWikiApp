@@ -10,6 +10,7 @@
 ::ng-deep .bar {
     padding: 0%;
     border: 0ch;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0);
 }
 p-toolbar {

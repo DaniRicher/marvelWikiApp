@@ -2,8 +2,8 @@
     <div class="col-12" >
 
         
-        <p-sidebar [(visible)]="visibleSidebar1">
-    
+        <p-sidebar [(visible)]="visibleSidebar1" [style]="{width: '250px'}">
+            <h4>MarvelApp</h4>
             <p-menu [model]="items" styleClass="bar" 
                     (click)="visibleSidebar1 = false"
                     routerLinkActive="link-active"></p-menu>

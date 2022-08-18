@@ -1,4 +1,13 @@
-<div class="grid">
+<div class="grid align-items-center justify-content-center m-5" *ngIf="spinner">
+
+        <div class="">
+            <p-progressSpinner strokeWidth="8"></p-progressSpinner>
+            <p class="animate__animated animate__backInUp">Cargando...</p>
+    
+        </div>
+    </div>
+
+<div class="grid" *ngIf="!spinner">
     <div class="col-12">
         <div *ngFor="let personaje of personajes">
 
@@ -11,7 +20,7 @@
                    </div>
                    <div class="col-9">
                         <div class="grid">
-                            <div class="col-12 sm:col-6 md:col-6 " style="padding: 0; margin-left: 10px;">
+                            <div class="col-12 sm:col-6 md:col-6 lg:col-6" style="padding: 0; margin-left: 10px;">
                                 <h4>Descripción</h4>
                                 <p>{{ personaje.description }}</p>
                                 <p *ngIf="personaje.description.length === 0">No hay descripción...</p>
@@ -21,7 +30,7 @@
                                 <h4>Última Modificación</h4>
                                 <p>{{ personaje.modified | date }}</p>
                              </div>
-                                <div class="col-12 target sm:col-4 md:col-4">
+                                <div class="col-12 target sm:col-6 md:col-4">
                                     <p-card>
                                             <h4>Historias: {{personaje.stories.returned}}/{{personaje.stories.available}}</h4>
                                             

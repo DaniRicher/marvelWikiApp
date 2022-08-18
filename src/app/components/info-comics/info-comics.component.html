@@ -1,4 +1,13 @@
-<div class="grid">
+<div class="grid align-items-center justify-content-center m-5" *ngIf="spinner">
+
+    <div class="">
+        <p-progressSpinner strokeWidth="8"></p-progressSpinner>
+        <p class="animate__animated animate__backInUp">Cargando...</p>
+
+    </div>
+</div>
+
+<div class="grid" *ngIf="!spinner">
     <div class="col-12">
         <div *ngFor="let comic of comics">
 
@@ -17,14 +26,14 @@
                         </div>
                         <div class="col-12 sm:col-3 md:col-3" style="padding: 0; margin-left: 10px;">
                             <h4>Última Modificación</h4>
-                            <p>{{ comic.modified | date }}</p>
+                            <p >{{ comic.modified | date }}</p>
                         </div>
-                        <div class="col-12 target sm:col-3 md:col-3">
+                        <div class="col-12 target sm:col-5 md:col-3">
                             <p-card>
                                 <h4>Series: {{ comic.series.name }}</h4>
                             </p-card>
                         </div>
-                        <div class="col-12 target sm:col-5 md:col-5">
+                        <div class="col-12 target sm:col-5 md:col-3">
                             <p-card>
                                 <h4>Historias: {{comic.stories.available}}</h4>
                                 <div *ngFor="let storie of comic.stories.items">
@@ -36,7 +45,7 @@
                                 </div>
                             </p-card>
                         </div>
-                        <div class="col-12 target sm:col-3 md:col-3">
+                        <div class="col-12 target sm:col-7 md:col-5">
                             <p-card>
                                 <h4>Creadores: {{ comic.creators.available }}</h4>
                                 <div *ngFor="let creators of comic.creators.items">

@@ -11,6 +11,7 @@ export class InfoComicsComponent implements OnInit {
 
   public id: any;
   public comics: any[] = [];
+  public spinner: boolean = true;
 
   constructor( private comicsService: ComicsService,
                private activatedRoute: ActivatedRoute ) { }
@@ -33,7 +34,7 @@ export class InfoComicsComponent implements OnInit {
     this.comicsService.obtenerInfoComics( this.id )
         .subscribe( comics => {
           this.comics = comics;
-          console.log(comics);
+          this.spinner = false;
         });
   }
 

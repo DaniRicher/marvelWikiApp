@@ -1,8 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PersonajesService } from '../../services/personajes.service';
-import { ComicsService } from '../../services/comics.service';
-import { Personaje } from '../../interfaces/personajes.interface';
 
 
 
@@ -17,6 +15,7 @@ export class InformacionComponent implements OnInit {
 
   public personajes!: any[];
   public comics!: any[];
+  public spinner: boolean = true;
 
   constructor( private activateRoute: ActivatedRoute,
                private personajesService: PersonajesService ) { }
@@ -24,7 +23,7 @@ export class InformacionComponent implements OnInit {
   ngOnInit(): void {
 
     this.paramsId();
-      this.obtenerPersonajes();
+    this.obtenerPersonajes();
     
   }
 
@@ -39,6 +38,7 @@ export class InformacionComponent implements OnInit {
     this.personajesService.obtenerInfoPersonajes( this.id )
         .subscribe( data => {
           this.personajes = data;
+          this.spinner = false;
         });
   }
 

@@ -40,8 +40,10 @@
                     
                     <ng-template pTemplate="header">
                             <div class="animacion">
-                                <img alt="{{comic.title}}" 
-                                     src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}">
+                                <!-- <img alt="{{comic.title}}" 
+                                     src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}"> -->
+                                     <p-image src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}"
+                                              [preview]="true" imageClass="p-image"></p-image>
                             </div>
                         </ng-template>
                         <h4>{{comic.title}}</h4>
@@ -75,4 +77,3 @@
                      (onPageChange)="cambiarPagina( $event )"></p-paginator>
     </div>
 </div>
-
