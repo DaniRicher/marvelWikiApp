@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonajesService } from '../../services/personajes.service';
+import { Router } from '@angular/router';
 
 
 
@@ -31,11 +32,18 @@ export class DashboardComponent implements OnInit {
     }
 ];
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
   
 
   ngOnInit(): void {
+
+    this.cargarLocalStorage();
+
+    this.spinner = false;
+
+  }
+  cargarLocalStorage() {
 
     if(localStorage.getItem('personajesFav')! ){
       this.personajes = JSON.parse(localStorage.getItem('personajesFav')!);
@@ -44,8 +52,16 @@ export class DashboardComponent implements OnInit {
       this.comics = JSON.parse(localStorage.getItem('comicsFav')!);
     }
     
-    this.spinner = false;
-
   }
+
+  obtenerPersonaje( id:number ) {
+    this.router.navigate([`/dashboard/personajes/${ id }`]);
+  }
+
+  obtenerComic( id:number ) {
+    this.router.navigate([`/dashboard/comics/${ id }`]);
+  }
+
+
 
 }
