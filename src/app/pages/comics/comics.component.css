@@ -1,6 +1,14 @@
 .tarjeta{
     height: auto;
-    width: 200px;
+}
+
+.title {
+    height: 20px;
+}
+
+h4 {
+    height: 100%;
+    width: 100%;
 }
 
 ::ng-deep .tam {
@@ -9,24 +17,26 @@
     width: 100%;
 }
 .animacion {
-    overflow:hidden;
+
     display: flex;
-    align-items: center;
+    justify-content: center;
     height: 200px;
-    width: 200px;
 }
-.animacion:hover{
+
+
+::ng-deep .p-image {
+    overflow:hidden;
+    border-radius: 10%;
+    /* width: 100%; */
+    height: 100%;
+}
+::ng-deep .p-image:hover{
     border-radius:50%;
     -webkit-border-radius:50%;
     box-shadow: 0px 0px 15px 15px rgba(0,0,0,0);
     -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,255);
 }
 
-::ng-deep .p-image {
-    border-radius: 5%;
-    width: 100%;
-    height: 100%;
-}
 :host ::ng-deep .p-image-action {
     pointer-events: none;
 }
@@ -37,13 +47,12 @@
 .botones {
     margin: 5px;
 }
-img{
-    border-radius: 10px;
-    max-height: 100%;
-    max-width: 100%;
+
+:host ::ng-deep .p-scrollpanel {
+    margin-top: 50px;
 }
 
-@media screen and ( max-width: 560px ){
+@media screen and ( max-width: 575px ){
     .tarjeta{
         width: 100%;
         height: auto;

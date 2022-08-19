@@ -34,7 +34,7 @@
                   class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 animate__animated animate__pulse">
                   <div class="tarjeta">
 
-                      <p-card class="m-1 " header="{{personaje.name}}" styleClass="tam">
+                      <p-card class="m-2" styleClass="tam">
       
                           <ng-template pTemplate="header">
                               <div class="animacion">
@@ -46,10 +46,13 @@
                           </ng-template>
       
                           <ng-template pTemplate="subheader">
-                              <p-scrollPanel [style]="{ height: '100px'}" class="animate__animate animate__pulse">
-                                  <p *ngIf="personaje.description.length <= 0">No hay descripción...</p>
-                                  {{personaje.description}}
-                              </p-scrollPanel>
+                            <div class="title">
+                                <h4>{{personaje.name}}</h4>
+                                  <p-scrollPanel [style]="{ height: '60px'}" class="animate__animate animate__pulse">
+                                      <p *ngIf="personaje.description.length <= 0">No hay descripción...</p>
+                                      {{personaje.description}}
+                                  </p-scrollPanel>
+                            </div>
                           </ng-template>
                           
                           <ng-template pTemplate="footer">

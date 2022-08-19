@@ -1,40 +1,58 @@
-
-img {
-    border-radius: 5%;
-    max-height: 100%;
-    max-width: 100%;
+.tarjeta {
+    height: auto;
 }
-::ng-deep .p-image {
-    border-radius: 5%;
+
+.title {
+    height: 20px;
+}
+h4{
+    height: 100%;
     width: 100%;
+}
+
+::ng-deep .tam{
+    border-radius: 5%;
+    height: 100%;
+    width: 100%;
+}
+.animacion {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+}
+
+::ng-deep .p-image {
+    overflow:hidden;
+    border-radius: 10%;
     height: 100%;
 }
+::ng-deep .p-image:hover{
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    box-shadow: 0px 0px 15px 15px rgba(0,0,0,0);
+    -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,255);
+}
+
 :host ::ng-deep .p-image-action {
     pointer-events: none;
 }
 :host ::ng-deep .p-image-toolbar {
     opacity: 0;
 }
-
-
-::ng-deep .tam{
-    border-radius: 5%;
-}
-
-.animacion:hover{
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    box-shadow: 0px 0px 15px 15px rgba(0,0,0,0);
-    -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,1);
-}
-.animacion {
-    overflow:hidden;
+:host ::ng-deep .p-scrollpanel {
+    margin-top: 50px;
 }
 .botones {
     margin: 5px;
 }
 
 @media screen and ( max-width: 575px ) {
+
+    .tarjeta{
+        width: 100%;
+        height: auto;
+    }
     
     .animacion {
         overflow:hidden;
