@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     if(localStorage.getItem('comicsFav')! ){
       this.comics = JSON.parse(localStorage.getItem('comicsFav')!);
     }
-    console.log(this.comics);
+    
     this.spinner = false;
 
   }

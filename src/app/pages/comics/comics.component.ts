@@ -99,7 +99,7 @@ export class ComicsComponent implements OnInit {
         cancelButtonText: 'Cancelar'
       }).then( result => {
         if( result.isConfirmed ) {
-          Swal.fire('Comic agregado con exito!!', '', 'success');
+          Swal.fire('Comic guardado con exito!!', '', 'success');
           this.comicsFav.push({ id, nombre, img });
           this.guardarLocalStorage('comicsFav', this.comicsFav );
         }

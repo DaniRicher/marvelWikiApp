@@ -58,15 +58,15 @@
                         
                             <ng-template pTemplate="footer">
                                 <div class="grid p-fluid align-content-center ">
-                                    <p-button class="col-12 sm:col-12 md:col-12 p-button-success" 
+                                    <p-button class="col-12 sm:col-12 md:col-12" 
                                               label="Favoritos" 
                                               icon="pi pi-star" 
-                                              styleClass="p-button-success"
+                                              styleClass="p-button-success p-button-rounded p-button-outlined"
                                               (click)="agregarFavoritos(comic.id, comic.title, comic.thumbnail.path+'.'+comic.thumbnail.extension )"></p-button>
                                     <p-button class="col-12 sm:col-12 md:col-12" 
                                           label="Información" 
                                           icon="pi pi-info-circle" 
-                                          styleClass="p-button-info"
+                                          styleClass="p-button-info p-button-rounded p-button-outlined"
                                           (onClick)="mostrarInfo( comic.id )"></p-button>
                                 </div>
                             </ng-template>

@@ -59,11 +59,11 @@
                                             label="Favoritos" 
                                             (click)="agregarFavoritos( personaje.id, personaje.name, personaje.thumbnail.path+'.'+personaje.thumbnail.extension )"
                                             icon="pi pi-star" 
-                                            styleClass="p-button-success"></p-button>
+                                            styleClass="p-button-success p-button-rounded p-button-outlined"></p-button>
                                   <p-button class="col-12 sm:col-6 md:col-12" 
                                             label="Información" 
                                             icon="pi pi-info-circle" 
-                                            styleClass="p-button-info"
+                                            styleClass="p-button-info p-button-rounded p-button-outlined"
                                             (onClick)="mostrarInfo( personaje.id )"></p-button>
                               </div>
                           </ng-template>
