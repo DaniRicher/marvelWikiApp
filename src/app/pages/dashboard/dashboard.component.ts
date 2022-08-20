@@ -62,6 +62,25 @@ export class DashboardComponent implements OnInit {
     this.router.navigate([`/dashboard/comics/${ id }`]);
   }
 
+  eliminarPersonaje( id: number ) {
+
+    let personaje = this.personajes.filter( data => data.id !== id );
+    this.personajes = personaje;
+    let nuevoLocal = JSON.stringify( this.personajes );
+    localStorage.setItem('personajesFav', nuevoLocal );
+    
+  }
+
+  eliminarComic( id: number ) {
+
+    let comic = this.comics.filter( data => data.id !== id );
+    console.log(comic);
+    this.comics = comic;
+    let nuevoLocal = JSON.stringify( this.comics );
+    localStorage.setItem('comicsFav', nuevoLocal );
+    
+  }
+
 
 
 }
