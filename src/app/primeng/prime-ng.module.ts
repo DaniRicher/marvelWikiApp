@@ -15,6 +15,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CarouselModule } from 'primeng/carousel';
 import { ImageModule } from 'primeng/image';
 import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -38,7 +40,9 @@ import { DialogModule } from 'primeng/dialog';
     ProgressSpinnerModule,
     CarouselModule,
     ImageModule,
-    DialogModule
+    DialogModule,
+    ConfirmDialogModule,
+    ToastModule
   ]
 })
 export class PrimeNgModule { }

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonajesService } from '../../services/personajes.service';
 import { Router } from '@angular/router';
+import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
 
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  providers: [ ConfirmationService, MessageService ]
 })
 export class DashboardComponent implements OnInit {
 
@@ -32,7 +33,9 @@ export class DashboardComponent implements OnInit {
     }
 ];
 
-  constructor( private router: Router ) { }
+  constructor( private router: Router,
+               private confirmationService: ConfirmationService,
+               private messageService: MessageService ) { }
 
   
 
@@ -62,25 +65,61 @@ export class DashboardComponent implements OnInit {
     this.router.navigate([`/dashboard/comics/${ id }`]);
   }
 
-  eliminarPersonaje( id: number ) {
+  eliminarPersonaje( personaje: any ) {
 
-    let personaje = this.personajes.filter( data => data.id !== id );
-    this.personajes = personaje;
-    let nuevoLocal = JSON.stringify( this.personajes );
-    localStorage.setItem('personajesFav', nuevoLocal );
+    const id = personaje.id;
+    const nombre = personaje.nombre;
+
+    this.confirmationService.confirm({
+      message: `¿Seguro que desea eliminar a ${ nombre } de sus favoritos?`,
+      accept: () => {
+        this.messageService.add({severity:'info', summary:'Confirmado', detail:'Ha sido eliminado de sus favoritos con éxito'});
+        let personajes = this.personajes.filter( data => data.id !== id );
+        this.personajes = personajes;
+        let nuevoLocal = JSON.stringify( this.personajes );
+        localStorage.setItem('personajesFav', nuevoLocal );
+      },
+      reject: (type:any) => {
+        switch(type) {
+          case ConfirmEventType.REJECT:
+              this.messageService.add({severity:'error', summary:'Cancelado', detail:'No ha sido eliminado'});
+          break;
+          case ConfirmEventType.CANCEL:
+              this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido eliminado'});
+          break;
+        }
+      }
+
+    });
+
+   
     
   }
 
-  eliminarComic( id: number ) {
+  eliminarComic( comic: any ) {
 
-    let comic = this.comics.filter( data => data.id !== id );
-    console.log(comic);
-    this.comics = comic;
-    let nuevoLocal = JSON.stringify( this.comics );
-    localStorage.setItem('comicsFav', nuevoLocal );
-    
+    const id = comic.id;
+    const nombre = comic.nombre
+    this.confirmationService.confirm({
+      message: `Seguro que quiere eliminar a ${ nombre } de sus favoritos`,
+      accept: () => {
+        this.messageService.add({severity:'info', summary:'Confirmado', detail:'Ha sido eliminado de sus favoritos con éxito'});
+        let comics = this.comics.filter( data => data.id !== id );
+        this.comics = comics;
+        let nuevoLocal = JSON.stringify( this.comics );
+        localStorage.setItem('comicsFav', nuevoLocal );
+      },
+      reject: (type:any) => {
+        switch(type) {
+          case ConfirmEventType.REJECT:
+              this.messageService.add({severity:'error', summary:'Cancelado', detail:'No ha sido eliminado'});
+          break;
+          case ConfirmEventType.CANCEL:
+              this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido eliminado'});
+          break;
+        }
+      }
+    });
   }
-
-
-
+  
 }
