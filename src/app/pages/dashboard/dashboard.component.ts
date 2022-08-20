@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
               this.messageService.add({severity:'error', summary:'Cancelado', detail:'No ha sido eliminado'});
           break;
           case ConfirmEventType.CANCEL:
-              this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido eliminado'});
+              this.messageService.add({severity:'error', summary:'Cancelado', detail:'No ha sido eliminado'});
           break;
         }
       }
