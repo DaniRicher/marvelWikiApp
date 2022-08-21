@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ComicsService } from '../../services/comics.service';
 import { ActivatedRoute } from '@angular/router';
-import { throwError } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-info-comics',
@@ -15,7 +15,8 @@ export class InfoComicsComponent implements OnInit {
   public spinner: boolean = true;
 
   constructor( private comicsService: ComicsService,
-               private activatedRoute: ActivatedRoute ) { }
+               private activatedRoute: ActivatedRoute,
+               private location: Location ) { }
 
   ngOnInit(): void {
 
@@ -38,7 +39,9 @@ export class InfoComicsComponent implements OnInit {
           this.spinner = false;
         });
   }
-
+  irAtras() {
+    this.location.back();
+  }
 
 
 }

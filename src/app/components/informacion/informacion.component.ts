@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PersonajesService } from '../../services/personajes.service';
+import { Location } from '@angular/common';
+
 
 
 
@@ -18,7 +20,8 @@ export class InformacionComponent implements OnInit {
   public spinner: boolean = true;
 
   constructor( private activateRoute: ActivatedRoute,
-               private personajesService: PersonajesService ) { }
+               private personajesService: PersonajesService,
+               private location: Location ) { }
 
   ngOnInit(): void {
 
@@ -40,6 +43,10 @@ export class InformacionComponent implements OnInit {
           this.personajes = data;
           this.spinner = false;
         });
+  }
+
+  irAtras() {
+    this.location.back();
   }
 
 }
