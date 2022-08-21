@@ -18,7 +18,7 @@
                     <img src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}" alt="">
                 </div>
                 <div class="col-12 sm:col-9">
-                    <div class="grid">
+                    <div class="grid contenedor">
                         <div class="col-12 sm:col-8 md:col-8" style="padding: 0; margin-left: 10px;">
                             <h4>Descripción</h4>
                             <p>{{ comic.description }}</p>
@@ -67,5 +67,5 @@
 </div>
 
 
-<button pButton type="button" routerLink="../" class="p-button-raised p-button-rounded p-button-outlined"
+<button pButton type="button" routerLink="../" class="p-button-danger p-button-raised p-button-rounded"
         icon="pi pi-arrow-circle-left"></button>

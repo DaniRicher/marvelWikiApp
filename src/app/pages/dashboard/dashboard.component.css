@@ -1,21 +1,75 @@
-.card {
-    margin: 10px;
-    overflow: hidden; 
-    text-overflow: ellipsis;
-}
+.tarjeta{
 
-.tam {
-    height: 100px;
-    overflow: hidden; 
-    text-overflow: ellipsis;
-}
-.personajes-item-content {
-    border-radius: 8px;
+    height: auto;
+    width: auto;
     margin: .3rem;
 }
 
-.personajes-image {
-    width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+::ng-deep .tam {
+    border-radius: 5%;
+    height: 100%;
+    width: 100%;
 }
+.personajes-item {
+    display: flex;
+    justify-content: center;
+}
+
+.animacion {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+
+}
+
+:host ::ng-deep .p-image {
+    border-radius: 5%;
+    height: 100%;
+}
+
+
+/* @media screen and ( max-width: 575px ){
+
+    .tarjeta{
+        width: auto;
+        height: auto;
+
+    }
+    .animacion {
+        overflow:hidden;
+        height: 235px;
+
+    }
+} */
+
+:host ::ng-deep .p-carousel-dot-icon {
+    color: white;
+
+}
+:host ::ng-deep .p-carousel-dot-item {
+    color: white;
+}
+
+@media screen and ( max-width: 575px ) {
+
+    .tarjeta{
+        width: 100%;
+        height: auto;
+    }
+    
+    .animacion {
+        overflow:hidden;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+

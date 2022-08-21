@@ -12,12 +12,12 @@
                  icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
 
-<div *ngIf="personajes.length === 0 && !spinner">
-    <h4>Aún no tiene personajes favoritos</h4>
-</div>
 
-<div *ngIf="!spinner">
-   
+<div *ngIf="!spinner" class="text-center">
+    
+    <div *ngIf="personajes.length === 0">
+        <h4>Aún no tiene personajes favoritos</h4>
+    </div>
 
     <p-carousel *ngIf="personajes.length > 0"
                 [value]="personajes" 
@@ -34,11 +34,13 @@
         
         <ng-template let-personaje pTemplate="item">
             <div class="personajes-item text-center">
-                <div class="personajes-item-content">
-                    <p-card>
+                <div class="tarjeta">
+                    <p-card class="m-2" styleClass="tam">
                         <ng-template pTemplate="header">
-                            <img src="{{ personaje.img }}" 
-                                 alt="{{personaje.nombre}} " class="personajes-image mt-3">
+                            <div class="animacion">
+                                <p-image src="{{ personaje.img }}"
+                                         imageClass="p-image"></p-image>
+                            </div>
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
@@ -64,6 +66,7 @@
                         
                         
                     </p-card>
+
                 </div>
             </div>
         </ng-template>
@@ -87,10 +90,13 @@
         
         <ng-template let-comic pTemplate="item">
             <div class="personajes-item text-center">
-                <div class="personajes-item-content">
+                <div class="tarjeta">
                     <p-card>
                         <ng-template pTemplate="header">
-                            <img src="{{ comic.img }}" alt="{{comic.nombre}}" class="personajes-image mt-3">
+                            <div class="animacion">
+                                <p-image src="{{comic.img}}" alt="{{comic.nombre}}"
+                                         imageClass="p-image"></p-image>
+                            </div>
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
