@@ -3,6 +3,9 @@ import { ComicsService } from '../../services/comics.service';
 import { Result } from '../../interfaces/comics.interfaces';
 import { Router } from '@angular/router';
 
+import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+
+
 import Swal from 'sweetalert2';
 
 
@@ -10,6 +13,7 @@ import Swal from 'sweetalert2';
   selector: 'app-comics',
   templateUrl: './comics.component.html',
   styleUrls: ['./comics.component.css'],
+  providers: [ ConfirmationService, MessageService ]
 })
 export class ComicsComponent implements OnInit {
 
@@ -28,7 +32,9 @@ export class ComicsComponent implements OnInit {
 
 
   constructor( private comicsService: ComicsService,
-               private router: Router ) { }
+               private router: Router,
+               private messageService: MessageService,
+               private confirmationService: ConfirmationService ) { }
 
   ngOnInit(): void {
     this.spinner = true;
@@ -85,23 +91,29 @@ export class ComicsComponent implements OnInit {
 
     this.cargarLocalStorage();
     if( this.id.includes(id) ) {
-      Swal.fire('Oops!!', 'El comic ya está agregado como favorito' , 'error');
+      this.messageService.add({severity:'error', summary:'Error', 
+                              detail:'El personaje ya está como favorito'});
       return;
     } else {
-      Swal.fire({
-        title: '¿Estás seguro?',
-        text: `Guardar a ${ nombre }`,
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si',
-        cancelButtonText: 'Cancelar'
-      }).then( result => {
-        if( result.isConfirmed ) {
-          Swal.fire('Comic guardado con exito!!', '', 'success');
+
+      this.confirmationService.confirm({
+        message: `¿Seguro que desea guardar a ${ nombre } como favorito?`,
+        
+        accept: () => {
+          this.messageService.add({severity:'success', summary:'Confirmado', 
+                                  detail:'Ha sido agregado a sus favoritos con éxito'});
           this.comicsFav.push({ id, nombre, img });
           this.guardarLocalStorage('comicsFav', this.comicsFav );
+        },
+        reject: ( type: any ) => {
+          switch( type ) {
+            case ConfirmEventType.REJECT:
+                this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido agregado'});
+            break;
+            case ConfirmEventType.CANCEL:
+                this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido agregado'});
+            break;
+          }
         }
       });
     }

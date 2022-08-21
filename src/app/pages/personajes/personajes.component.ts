@@ -99,7 +99,7 @@ export class PersonajesComponent implements OnInit {
           this.guardarLocalStorage('personajesFav', this.personajesFav );
         },
         reject: ( type: any) => {
-          switch(type) {
+          switch( type ) {
             case ConfirmEventType.REJECT:
                 this.messageService.add({severity:'warn', summary:'Cancelado', detail:'No ha sido agregado'});
             break;
