@@ -17,6 +17,11 @@ export class DashboardComponent implements OnInit {
   public comics: any[] = [];
   public responsiveOptions = [
     {
+      breakpoint: '1200px',
+      numVisible: 4,
+      numScroll: 4
+    },
+    {
         breakpoint: '1024px',
         numVisible: 3,
         numScroll: 3

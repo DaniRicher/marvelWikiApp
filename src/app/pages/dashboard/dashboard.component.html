@@ -35,7 +35,7 @@
         <ng-template let-personaje pTemplate="item">
             <div class="personajes-item text-center">
                 <div class="tarjeta">
-                    <p-card class="m-2" styleClass="tam">
+                    <p-card styleClass="tam">
                         <ng-template pTemplate="header">
                             <div class="animacion">
                                 <p-image src="{{ personaje.img }}"
@@ -44,7 +44,7 @@
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
-                            <div>
+                            <div class="title">
                                 <h4 class="p-mb-1"> {{ personaje.nombre }} </h4>
                             </div>
                         </ng-template>
@@ -78,8 +78,8 @@
     </div>
     <p-carousel *ngIf="comics.length > 0"
                 [value]="comics" 
-                [numVisible]="3" 
-                [numScroll]="3" 
+                [numVisible]="5" 
+                [numScroll]="5" 
                 [circular]="true" 
                 [autoplayInterval]="3000"
                 [responsiveOptions]="responsiveOptions">
@@ -91,7 +91,7 @@
         <ng-template let-comic pTemplate="item">
             <div class="personajes-item text-center">
                 <div class="tarjeta">
-                    <p-card>
+                    <p-card styleClass="tam">
                         <ng-template pTemplate="header">
                             <div class="animacion">
                                 <p-image src="{{comic.img}}" alt="{{comic.nombre}}"
@@ -100,7 +100,7 @@
                         </ng-template>
     
                         <ng-template pTemplate="subheader">
-                            <div>
+                            <div class="title">
                                 <h4 class="p-mb-1"> {{comic.nombre}} </h4>
                             </div>
                         </ng-template>
