@@ -5,9 +5,6 @@ import { Router } from '@angular/router';
 
 import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
 
-
-import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
