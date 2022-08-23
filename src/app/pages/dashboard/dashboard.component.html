@@ -7,17 +7,21 @@
     </div>
 </div>
 
+<h1 style="margin: 0;">Bienvenidos A MarvelApp</h1>
+<hr style="margin: 0;">
+
+
 <p-confirmDialog [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
                  header="Confirmar"
                  icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
 
 
-<div *ngIf="!spinner" class="text-center">
-    
-    <div *ngIf="personajes.length === 0">
-        <h4>Aún no tiene personajes favoritos</h4>
-    </div>
+
+<div *ngIf="!spinner">
+        <div *ngIf="personajes.length === 0">
+            <h4>Aún no tiene personajes favoritos</h4>
+        </div>
 
     <p-carousel *ngIf="personajes.length > 0"
                 [value]="personajes" 
@@ -76,6 +80,7 @@
     <div *ngIf="comics.length === 0 && !spinner">
         <h4>Aún no tiene comics favoritos</h4>
     </div>
+
     <p-carousel *ngIf="comics.length > 0"
                 [value]="comics" 
                 [numVisible]="5" 
