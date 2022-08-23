@@ -98,7 +98,7 @@ export class ComicsComponent implements OnInit {
 
       this.confirmationService.confirm({
         message: `¿Seguro que desea guardar a ${ nombre } como favorito?`,
-        
+        defaultFocus: 'reject',
         accept: () => {
           this.messageService.add({severity:'success', summary:'Confirmado', 
                                   detail:'Ha sido agregado a sus favoritos con éxito'});
