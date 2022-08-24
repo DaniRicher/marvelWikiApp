@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+import { CreatorsService } from '../../services/creators.service';
 
 
 
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
   public spinner: boolean = true;
   public personajes: any[] = [];
   public comics: any[] = [];
+  public creators: any[] = [];
   public responsiveOptions = [
     {
       breakpoint: '1200px',
@@ -39,6 +41,7 @@ export class DashboardComponent implements OnInit {
 ];
 
   constructor( private router: Router,
+               private creatorsService: CreatorsService,
                private confirmationService: ConfirmationService,
                private messageService: MessageService ) { }
 
@@ -97,8 +100,6 @@ export class DashboardComponent implements OnInit {
 
     });
 
-   
-    
   }
 
   eliminarComic( comic: any ) {

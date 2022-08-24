@@ -4,13 +4,16 @@
         opacity: 0%;
         pointer-events: none;
     }
+}
 
-   
+::ng-deep .header {
+    padding: 0;
 }
 ::ng-deep .bar {
     padding: 0%;
-    border: 0ch;
+    border: 0;
     width: 100%;
+    margin: 0;
     background-color: rgba(0, 0, 0, 0);
 }
 p-toolbar {

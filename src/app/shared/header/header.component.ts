@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { filter, map, Subscription } from 'rxjs';
+import { ActivationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,18 @@ export class HeaderComponent implements OnInit {
   items!: MenuItem[];
   visibleSidebar1: boolean = false;
 
-  constructor() { }
+  public titulo: string = '';
+  public tituloSubs$!: Subscription;
+
+  constructor( private router: Router ) {
+
+    this.tituloSubs$ = this.getArgumentosRuta()
+      .subscribe( ({titulo}) =>{
+      this.titulo= titulo;
+      document.title = `MarvelApp - ${ titulo }`;
+    });
+
+  }
 
   ngOnInit(): void {
 
@@ -33,6 +46,14 @@ export class HeaderComponent implements OnInit {
         routerLink: ['comics']
       }
     ]
+  }
+  getArgumentosRuta() {
+    return this.router.events
+      .pipe(
+        filter<any> ( event => event instanceof ActivationEnd ),
+        filter ( ( event: ActivationEnd ) => event.snapshot.firstChild === null ),
+        map ( ( event: ActivationEnd ) => event.snapshot.data ),
+      );
   }
 
 }

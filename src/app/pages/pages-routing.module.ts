@@ -12,11 +12,11 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'personajes', component: PersonajesComponent },
-      { path: 'personajes/:id', component: InformacionComponent },
-      { path: 'comics', component: ComicsComponent },
-      { path: 'comics/:id', component: InfoComicsComponent },
+      { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+      { path: 'personajes', component: PersonajesComponent, data: { titulo: 'Personajes' } },
+      { path: 'personajes/:id', component: InformacionComponent, data: { titulo: 'Personajes' } },
+      { path: 'comics', component: ComicsComponent, data: { titulo: 'Comics' } },
+      { path: 'comics/:id', component: InfoComicsComponent, data: { titulo: 'Comics' } },
       { path: '**', redirectTo: '/dashboard' },
     ]
   },
