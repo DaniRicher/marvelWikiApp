@@ -7,9 +7,9 @@
     </div>
 </div>
 <div class="text-center">
-    <hr style="margin: 0;">
+    <hr style="margin: 1px;">
     <h2 style="margin: 0;">Bienvenidos A MarvelApp</h2>
-    <hr style="margin: 0;">
+    <hr style="margin: 1px;">
 </div>
 
 
@@ -18,16 +18,43 @@
                  icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
 
+
 <div class="imagenPortada">
-    <img src="https://i.annihil.us/u/prod/marvel/i/mg/8/e0/52bdf830aa094.jpg" alt="Marvel">
+    <img src="https://i.annihil.us/u/prod/marvel/i/mg/8/e0/52bdf830aa094.jpg" 
+    alt="Marvel">
+    <div class="texto-encima">
+        
+        <span>Pagina Web</span>
+        <br>
+        <span>Usando</span>
+        <br>
+        <span>Api oficial de Marvel</span>
+        <br>
+        <div class="texto">
+            <p>
+                La API de Marvel Comics permite a los desarrolladores de todo el mundo 
+                acceder a información sobre la amplia biblioteca de cómics de Marvel, 
+                desde lo que está por venir hasta hace 70 años.
+            </p>
+            <button pButton 
+                    label="Ir a Personajes"
+                    class="m-1"
+                    routerLink="/dashboard/personajes"></button>
+            <button pButton 
+                    label="Ir a Comics"
+                    class="m-1"
+                    routerLink="/dashboard/comics"></button>
+        </div>
+    </div>
 </div>
 
 
 <div *ngIf="!spinner">
         <div *ngIf="personajes.length === 0">
-            <h4>Aún no tiene personajes favoritos</h4>
-            <button pButton label="Ir a Personajes"
-                    routerLink="/dashboard/personajes"></button>
+            <div class="">
+                <h4>Aún no tiene personajes favoritos...</h4>
+            </div>
+           
 
         </div>
 
@@ -86,9 +113,10 @@
     
 
     <div *ngIf="comics.length === 0 && !spinner">
-        <h4>Aún no tiene comics favoritos</h4>
-        <button pButton label="Ir a Comics"
-                routerLink="/dashboard/comics"></button>
+        <div class="">
+            <h4>Aún no tiene comics favoritos</h4>
+        </div>
+        
     </div>
 
     <p-carousel *ngIf="comics.length > 0"
