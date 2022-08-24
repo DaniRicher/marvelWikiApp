@@ -49,9 +49,15 @@ export class HeaderComponent implements OnInit {
         label: 'Favoritos',
         icon: 'fa-solid fa-star',
         routerLink: ['favoritos']
-      }
+      },
+      // {
+      //   label: 'Ajustes',
+      //   icon: 'fa-solid fa-sliders',
+      //   routerLink: ['ajustes']
+      // }
     ]
   }
+
   getArgumentosRuta() {
     return this.router.events
       .pipe(
