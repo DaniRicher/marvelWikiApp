@@ -6,6 +6,7 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { ComicsComponent } from './comics/comics.component';
 import { InformacionComponent } from '../components/informacion/informacion.component';
 import { InfoComicsComponent } from '../components/info-comics/info-comics.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'personajes/:id', component: InformacionComponent, data: { titulo: 'Personajes' } },
       { path: 'comics', component: ComicsComponent, data: { titulo: 'Comics' } },
       { path: 'comics/:id', component: InfoComicsComponent, data: { titulo: 'Comics' } },
+      { path: 'favoritos', component: FavoritosComponent, data: { titulo: 'Favoritos' } },
       { path: '**', redirectTo: '/dashboard' },
     ]
   },

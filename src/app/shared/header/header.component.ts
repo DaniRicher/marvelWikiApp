@@ -44,6 +44,11 @@ export class HeaderComponent implements OnInit {
         label: 'Comics',
         icon: 'fa-solid fa-newspaper',
         routerLink: ['comics']
+      },
+      {
+        label: 'Favoritos',
+        icon: 'fa-solid fa-star',
+        routerLink: ['favoritos']
       }
     ]
   }

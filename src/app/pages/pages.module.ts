@@ -11,6 +11,7 @@ import { PrimeNgModule } from '../primeng/prime-ng.module';
 import { FiltroPipe } from '../pipes/filtro.pipe';
 import { BusquedaPipe } from '../pipes/busqueda.pipe';
 import { ComponentsModule } from '../components/components.module';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ComponentsModule } from '../components/components.module';
     PersonajesComponent,
     ComicsComponent,
     FiltroPipe,
-    BusquedaPipe
+    BusquedaPipe,
+    FavoritosComponent
   ],
   imports: [
     CommonModule,
