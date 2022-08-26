@@ -15,10 +15,10 @@ export class ScropToTopComponent implements OnInit {
 
   @HostListener( 'window:scroll', [] )
   onWindowScroll(): void {
-      if ( window.scrollY || document.documentElement.scrollTop || document.body.scrollTop > 100 ) {
+      if ( window.scrollY || this.document.documentElement.scrollTop || this.document.body.scrollTop > 100 ) {
           this.windowScrolled = true;
       }
-     else if (this.windowScrolled && window.scrollY || document.documentElement.scrollTop || document.body.scrollTop < 10 ) {
+     else if (this.windowScrolled && window.scrollY || this.document.documentElement.scrollTop || this.document.body.scrollTop < 10 ) {
           this.windowScrolled = false;
       }
   }

@@ -6,7 +6,7 @@
     }
 }
 
-::ng-deep .header {
+.header {
     padding: 0;
 }
 ::ng-deep .bar {
