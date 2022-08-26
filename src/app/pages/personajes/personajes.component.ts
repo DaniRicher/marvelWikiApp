@@ -15,7 +15,7 @@ export class PersonajesComponent implements OnInit {
 
   public personajes: Personaje[] = [];
   public imagenes: any[] = [];
-  public pageSize:number = 10;
+  public pageSize:number = 12;
   public desde: number = 0;
   public hasta: number = 10;
   public search: string = '';
