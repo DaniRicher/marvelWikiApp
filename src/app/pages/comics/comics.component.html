@@ -36,7 +36,7 @@
 
         <div class="grid mb-3">
             <div *ngFor="let comic of comics | filtro:desde:search; let i = index" 
-                 class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 animate__animated animate__pulse">
+                 class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2" [ngClass]="{'animate__animated animate__pulse' : anima }">
                 <div class="tarjeta">
 
                     <p-card class="m-2" styleClass="tam"> 
@@ -44,7 +44,9 @@
                     <ng-template pTemplate="header">
                             <div class="animacion">
                                      <p-image src="{{ comic.thumbnail.path+'.'+comic.thumbnail.extension }}"
-                                              [preview]="true" imageClass="p-image"></p-image>
+                                              [preview]="true" 
+                                              imageClass="p-image"
+                                              (click)="anima = false"></p-image>
                             </div>
                         </ng-template>
                         

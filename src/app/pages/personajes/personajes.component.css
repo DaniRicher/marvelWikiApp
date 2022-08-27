@@ -10,11 +10,12 @@ h4{
     width: 100%;
 }
 
-::ng-deep .tam{
+:host ::ng-deep .tam{
     border-radius: 5%;
     height: 100%;
     width: 100%;
 }
+
 .animacion {
     display: flex;
     justify-content: center;
@@ -27,6 +28,7 @@ h4{
     border-radius: 10%;
     height: 100%;
 }
+
 :host ::ng-deep .p-image:hover{
     border-radius:50%;
     -webkit-border-radius:50%;
@@ -34,15 +36,14 @@ h4{
     -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,255);
 }
 
-:host ::ng-deep .p-image-action {
-    pointer-events: none;
-}
 :host ::ng-deep .p-image-toolbar {
-    opacity: 0;
+    width: 100%;
 }
+
 :host ::ng-deep .p-scrollpanel {
     margin-top: 50px;
 }
+
 .botones {
     margin: 5px;
 }

@@ -27,6 +27,8 @@ export class ComicsComponent implements OnInit {
   public pag: boolean = true;
   public noFound: boolean = false;
 
+  public anima: boolean = true;
+
   public comicsFav:any[] = [];
   public id:any[] = [];
 

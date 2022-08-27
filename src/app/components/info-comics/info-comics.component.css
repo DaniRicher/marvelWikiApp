@@ -10,7 +10,9 @@ img {
 
 button {
 	position: fixed;
-	bottom: 20px;
+	bottom: 15px;
+    left: 15px;
+    z-index: 1;
 }
 .contenedor {
     padding: 10px;

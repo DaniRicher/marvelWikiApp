@@ -8,10 +8,14 @@ img {
     margin: 1px;
     border-radius: 10px;
 }
+
 .contenedor {
     padding: 10px;
 }
+
 button {
 	position: fixed;
-	bottom: 20px;
+	bottom: 15px;
+    left: 15px;
+    z-index: 1;
 }

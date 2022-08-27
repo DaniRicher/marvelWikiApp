@@ -22,6 +22,8 @@ export class PersonajesComponent implements OnInit {
   public spinner: boolean = true;
   public pag: boolean = true;
   public noFound!: boolean;
+  
+  public anima: boolean = true;
 
   public personajesFav: any[] = [];
   public id: any[] = [];
@@ -110,5 +112,6 @@ export class PersonajesComponent implements OnInit {
     }
 
   }
+
 
 }
