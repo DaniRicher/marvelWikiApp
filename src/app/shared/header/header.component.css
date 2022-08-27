@@ -9,6 +9,7 @@
 .header {
     padding: 0;
 }
+
 ::ng-deep .bar {
     padding: 0%;
     border: 0;
@@ -16,6 +17,7 @@
     margin: 0;
     background-color: rgba(0, 0, 0, 0);
 }
+
 p-toolbar {
     position: relative;
 }

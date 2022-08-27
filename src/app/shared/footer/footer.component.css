@@ -1,6 +1,10 @@
+
 .footer {
+    
     padding: 0;
-    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    
 }
 
 .imagen img{
