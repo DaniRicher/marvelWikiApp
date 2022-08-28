@@ -44,14 +44,35 @@ h4 {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: 80vh;
     padding: 0%;
+    position: absolute;
     overflow: hidden;
 }
 
+
+
 .imagenPortada img{
+    height: 100%;
     width: 100%;
+    object-fit: contain;
 }
+
+@media screen and ( max-width: 767px ) {
+    .imagenPortada {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+        padding: 0%;
+        position: relative;
+        overflow: hidden;
+
+    }
+}
+
 
 .texto-encima {
     position: absolute;
@@ -95,3 +116,4 @@ h4 {
 
 
 }
+
