@@ -1,4 +1,4 @@
-.tarjeta{
+.tarjeta {
     height: auto;
 }
 
@@ -29,12 +29,15 @@ h4 {
     border-radius: 10%;
     height: 100%;
 }
-:host ::ng-deep .p-image:hover{
+
+:host ::ng-deep .p-image:hover {
     border-radius:50%;
     -webkit-border-radius:50%;
     box-shadow: 0px 0px 15px 15px rgba(0,0,0,0);
     -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,255);
 }
+
+
 
 :host ::ng-deep .p-image-toolbar {
     width: 100%;
@@ -57,5 +60,9 @@ h4 {
         overflow:hidden;
         height: 100%;
         width: 100%;
+    }
+
+    :host ::ng-deep .p-paginator {
+        margin-bottom: 20px;
     }
 }
