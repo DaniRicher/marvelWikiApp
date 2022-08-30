@@ -12,6 +12,7 @@ import { FiltroPipe } from '../pipes/filtro.pipe';
 import { BusquedaPipe } from '../pipes/busqueda.pipe';
 import { ComponentsModule } from '../components/components.module';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { ThemesComponent } from './themes/themes.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     ComicsComponent,
     FiltroPipe,
     BusquedaPipe,
-    FavoritosComponent
+    FavoritosComponent,
+    ThemesComponent
   ],
   imports: [
     CommonModule,
