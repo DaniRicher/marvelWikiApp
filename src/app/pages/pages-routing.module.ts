@@ -7,6 +7,7 @@ import { ComicsComponent } from './comics/comics.component';
 import { InformacionComponent } from '../components/informacion/informacion.component';
 import { InfoComicsComponent } from '../components/info-comics/info-comics.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'comics', component: ComicsComponent, data: { titulo: 'Comics' } },
       { path: 'comics/:id', component: InfoComicsComponent, data: { titulo: 'Comics' } },
       { path: 'favoritos', component: FavoritosComponent, data: { titulo: 'Favoritos' } },
+      { path: 'ajustes', component: SettingsComponent, data: { titulo: 'Ajustes' } },
       { path: '**', redirectTo: '/dashboard' },
     ]
   },

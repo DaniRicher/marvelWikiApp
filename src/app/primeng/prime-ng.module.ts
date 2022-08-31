@@ -17,7 +17,7 @@ import { ImageModule } from 'primeng/image';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 
 
@@ -42,7 +42,8 @@ import { ToastModule } from 'primeng/toast';
     ImageModule,
     DialogModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    InputSwitchModule
   ]
 })
 export class PrimeNgModule { }
