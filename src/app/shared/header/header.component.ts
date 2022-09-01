@@ -50,11 +50,11 @@ export class HeaderComponent implements OnInit {
         icon: 'fa-solid fa-star',
         routerLink: ['favoritos']
       },
-      // {
-      //   label: 'Ajustes',
-      //   icon: 'fa-solid fa-sliders',
-      //   routerLink: ['ajustes']
-      // }
+      {
+        label: 'Ajustes',
+        icon: 'fa-solid fa-sliders',
+        routerLink: ['ajustes']
+      }
     ]
   }
 

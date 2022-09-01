@@ -18,6 +18,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 
@@ -43,7 +44,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     DialogModule,
     ConfirmDialogModule,
     ToastModule,
-    InputSwitchModule
+    InputSwitchModule,
+    RadioButtonModule
   ]
 })
 export class PrimeNgModule { }
