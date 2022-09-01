@@ -48,6 +48,11 @@
                 "input": "src/assets/themes/theme-bootstrap4-light-blue.scss",
                 "bundleName": "bootstrap4-light-blue",
                 "inject": false
+              },
+              {
+                "input": "src/assets/themes/theme-bootstrap4-dark-blue.scss",
+                "bundleName": "bootstrap4-dark-blue",
+                "inject": false
               }
             ],
             "scripts": []
