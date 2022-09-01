@@ -15,20 +15,15 @@ export class SettingsComponent implements OnInit {
 
   constructor( @Inject(DOCUMENT) private document: Document,
                private imgsService: ImgsService ) {
-    let theme = window.localStorage.getItem('theme') || 'dark';
-    if( theme === 'mdc-light-indigo' ) {
-      this.themeSelection = 'mdc-light-indigo';
-    } else {
-      this.themeSelection = 'mdc-dark-indigo';
-    }
+    let theme = window.localStorage.getItem('theme') || 'mdc-dark-indigo';
+    this.themeSelection = theme;
   }
 
   ngOnInit(): void {
   }
 
-  changeTheme( state: string ) {
+  changeTheme( theme: string ) {
 
-    let theme = state;
     window.localStorage.setItem( 'theme', theme );
     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
     themeLink.href = theme+'.css';

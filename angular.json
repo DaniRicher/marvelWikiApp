@@ -43,6 +43,11 @@
                 "input": "src/assets/themes/theme-mdc-light-indigo.scss",
                 "bundleName": "mdc-light-indigo",
                 "inject": false
+              },
+              {
+                "input": "src/assets/themes/theme-bootstrap4-light-blue.scss",
+                "bundleName": "bootstrap4-light-blue",
+                "inject": false
               }
             ],
             "scripts": []

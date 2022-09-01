@@ -25,6 +25,15 @@
                             (onClick)="changeTheme( claro.value )"></p-radioButton>
             <label for="val2"> Claro</label>
         </div>
+        <div class="col-12">
+            <p-radioButton name="groupname" 
+                            inputId="val3" 
+                            value="bootstrap4-light-blue"
+                            #blue
+                            [(ngModel)]="themeSelection"
+                            (onClick)="changeTheme( blue.value )"></p-radioButton>
+            <label for="val3"> Blue</label>
+        </div>
 
         <div class="col-12">
             <h2 style="margin-bottom: 0;">Tamaño de la fuente</h2>
