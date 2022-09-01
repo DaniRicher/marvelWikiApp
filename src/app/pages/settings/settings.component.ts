@@ -10,11 +10,12 @@ import { ImgsService } from '../../services/imgs.service';
 export class SettingsComponent implements OnInit {
 
   themeSelection: string = '';
+  public tamanio: number = 16;
+
 
   constructor( @Inject(DOCUMENT) private document: Document,
                private imgsService: ImgsService ) {
     let theme = window.localStorage.getItem('theme') || 'dark';
-    console.log(theme);
     if( theme === 'light' ) {
       this.themeSelection = 'light';
     } else {
@@ -34,6 +35,24 @@ export class SettingsComponent implements OnInit {
 
     this.imgsService.cambiarImagen(theme);
     
+  }
+
+  sizeFont( number: number ) {
+
+    let tam = parseInt(localStorage.getItem('font') || '16');
+    this.tamanio = tam;
+
+    this.tamanio += number;
+    if( this.tamanio <= 11 ) {
+      return this.tamanio = 12;
+    }
+
+    if( this.tamanio >= 19 ) {
+      return this.tamanio = 18;
+    }
+
+    localStorage.setItem('font', this.tamanio.toString()+'px');
+    return this.document.querySelector('html')!.style.fontSize = this.tamanio.toString()+'px';
   }
 
 }

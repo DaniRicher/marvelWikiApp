@@ -19,6 +19,13 @@ export class HomeComponent implements OnInit {
     let themeLink = document.getElementById('app-theme') as HTMLLinkElement;
     themeLink.href = 'mdc-'+theme+'-indigo'+'.css';
 
+    this.font();
+
+  }
+
+  font() {
+    let font = localStorage.getItem('font') || '16px';
+    document.querySelector('html')!.style.fontSize =  font;
   }
 
 }
