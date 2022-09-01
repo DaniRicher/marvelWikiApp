@@ -42,8 +42,8 @@ export class SettingsComponent implements OnInit {
       return this.tamanio = 12;
     }
 
-    if( this.tamanio >= 19 ) {
-      return this.tamanio = 18;
+    if( this.tamanio >= 18 ) {
+      return this.tamanio = 17;
     }
 
     localStorage.setItem('font', this.tamanio.toString()+'px');

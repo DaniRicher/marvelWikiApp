@@ -30,13 +30,10 @@
                        #txtSearch>         
             </div>
         </div>
-        <!-- <hr style="margin-top: 0;"> -->
         <div *ngIf="noFound | busqueda:search:personajes">
             <h3 class="animate__animated animate__backInUp">No se encontró...</h3>
         </div>
         <div class="grid">
-            <!-- <p-image src="../../../assets/marvel.png"
-                     [preview]="true"></p-image> -->
             <div *ngFor="let personaje of personajes | filtro:desde:search ; let i= index" 
                   class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 " [ngClass]="{'animate__animated animate__pulse' : anima }">
                   <div class="tarjeta ">

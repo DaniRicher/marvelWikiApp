@@ -7,7 +7,7 @@ html, body {
 
 body {
     margin: 0;
-    padding-bottom: 113px;
+    padding-bottom: 130px;
     position: relative;
     margin-bottom: 0;
     min-height: 100vh;
@@ -17,13 +17,13 @@ body {
 @media screen and ( max-width: 768px ) {
     
     body{
-        padding-bottom: 184px;
+        padding-bottom: 200px;
     }
 }
 
 @media screen and ( max-width: 575px ) {
     
     body{
-        padding-bottom: 219px;
+        padding-bottom: 250px;
     }
 }
