@@ -12,12 +12,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let theme = localStorage.getItem('theme') || 'dark';
+    let theme = localStorage.getItem('theme') || 'mdc-dark-indigo';
 
     this.imgsService.cambiarImagen( theme );
 
     let themeLink = document.getElementById('app-theme') as HTMLLinkElement;
-    themeLink.href = 'mdc-'+theme+'-indigo'+'.css';
+    themeLink.href = theme+'.css';
 
     this.font();
 

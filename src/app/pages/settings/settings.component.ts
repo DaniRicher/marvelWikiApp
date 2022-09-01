@@ -16,10 +16,10 @@ export class SettingsComponent implements OnInit {
   constructor( @Inject(DOCUMENT) private document: Document,
                private imgsService: ImgsService ) {
     let theme = window.localStorage.getItem('theme') || 'dark';
-    if( theme === 'light' ) {
-      this.themeSelection = 'light';
+    if( theme === 'mdc-light-indigo' ) {
+      this.themeSelection = 'mdc-light-indigo';
     } else {
-      this.themeSelection = 'dark';
+      this.themeSelection = 'mdc-dark-indigo';
     }
   }
 
@@ -31,7 +31,7 @@ export class SettingsComponent implements OnInit {
     let theme = state;
     window.localStorage.setItem( 'theme', theme );
     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
-    themeLink.href = 'mdc-'+theme+'-indigo'+'.css';
+    themeLink.href = theme+'.css';
 
     this.imgsService.cambiarImagen(theme);
     

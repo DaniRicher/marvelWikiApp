@@ -9,7 +9,7 @@ export class ImgsService {
 
   cambiarImagen( theme: string ) {
 
-    if( theme === 'light' ) {
+    if( theme === 'mdc-light-indigo' ) {
       document.getElementById('img-header')?.setAttribute('src', '../../../assets/Marvel_Logo.png');
       document.getElementById('img-footer')?.setAttribute('src', '../../../assets/Marvel_Logo.png');
     } else {
